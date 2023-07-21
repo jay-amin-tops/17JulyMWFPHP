@@ -1,0 +1,15 @@
+https://creately.com/diagram-community/popular/t/activity-diagram
+
+
+1) UseCase Diagram
+2) Sequance Diagram
+3) Activity Diagram
+4) state Check Diagram
+5) Context Level Diagram
+6) First Level Diagram
+7) if required than go for the second and thhird and so on Level Diagram
+8) ERD
+9) Class Diagram
+
+
+

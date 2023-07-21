@@ -1,0 +1,38 @@
+
+====================== GIT HUB START =======================
+
+Step 1 : create Git Account
+Step 2 : Signin in ur git account
+Step 3 : Create new Repo here we craeted a repo as 26jun_frontend_MWF_8
+Step 4 : Download gitBash from https://git-scm.com/downloads
+Step 5 : installed it (gitbash) in ur local machine (setup it in ur pc)
+Step 6 : clone ur git repo in ur local machine
+	
+	CMD : git clone https://github.com/jay-amin-tops/17JulyMWFPHP.git
+
+Step 7 : create files or copy from other folder inside this folder 
+Step 8 : for upload that files in git repo
+Step 9 : git add .
+Step 10 :  git commit -m "anything"
+Step 11 : git push
+
+
+https://github.com/jay-amin-tops/17JulyMWFPHP
+
+====================== GIT HUB END ==============================
+
+
+===================== ZOOM link START =========================
+
+https://us05web.zoom.us/j/89399617849?pwd=8Ixd1t4I6V5iJgnUPj8Qvc5AWBvibD.1
+
+===================== ZOOM link END =========================
+
+
+
+
+==================== Google Drive START ===================
+
+https://drive.google.com/drive/folders/1ggCrzpKrlkLV6vDlJbPELom6ubxiR-OU?usp=drive_link
+
+==================== Google Drive END ===================

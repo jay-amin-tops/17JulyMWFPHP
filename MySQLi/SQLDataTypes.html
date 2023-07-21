@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody><tr><td>
+        <div id="bottomnextup">
+        <a class="next" href="sql-operators">next →</a>
+        <a class="next" href="sql-syntax">← prev</a>
+        </div>
+        <h1 class="h1">SQL Data Types</h1>
+        <p>Data types are used to represent the nature of the data that can be stored in the database table. For example, in a particular column of a table, if we want to store a string type of data then we will have to declare a string data type of this column.</p>
+        <p>Data types mainly classified into three categories for every database.</p>
+        <ul class="points">
+        <li>String Data types</li>
+        <li>Numeric Data types</li>
+        <li>Date and time Data types</li>
+        </ul>
+        <h3 class="h2">Data Types in MySQL, SQL Server and Oracle Databases </h3>
+        <h3 class="h3">MySQL Data Types</h3>
+        <p>A list of data types used in MySQL database. This is based on MySQL 8.0. </p>
+     
+        <table class="alt">
+        <tbody><tr>
+        <td><strong>CHAR(Size)</strong></td>
+        <td>It is used to specify a fixed length string that can contain numbers, letters, and special characters. Its size can be 0 to 255 characters. Default is 1. </td>
+        </tr>
+        <tr>
+        <td><strong>VARCHAR(Size)</strong></td>
+        <td>It is used to specify a variable length string that can contain numbers, letters, and special characters. Its size can be from 0 to 65535 characters.</td>
+        </tr>
+        <tr>
+        <td><strong>BINARY(Size)</strong></td>
+        <td>It is equal to CHAR() but stores binary byte strings. Its size parameter specifies the column length in the bytes. Default is 1.</td>
+        </tr>
+        <tr>
+        <td><strong>VARBINARY(Size)</strong></td>
+        <td>It is equal to VARCHAR() but stores binary byte strings. Its size parameter specifies the maximum column length in bytes.</td>
+        </tr>
+        <tr>
+        <td><strong>TEXT(Size)</strong></td>
+        <td>It holds a string that can contain a maximum length of 255 characters.</td>
+        </tr>
+        <tr>
+        <td><strong>TINYTEXT</strong></td>
+        <td>It holds a string with a maximum length of 255 characters.</td>
+        </tr>
+        <tr>
+        <td><strong>MEDIUMTEXT</strong></td>
+        <td>It holds a string with a maximum length of 16,777,215.</td>
+        </tr>
+        <tr>
+        <td><strong>LONGTEXT</strong></td>
+        <td>It holds a string with a maximum length of 4,294,967,295 characters.</td>
+        </tr>
+        <tr>
+        <td><strong>ENUM(val1, val2, val3,...)</strong></td>
+        <td>It is used when a string object having only one value, chosen from a list of possible values. It contains 65535 values in an ENUM list. If you insert a value that is not in the list, a blank value will be inserted.</td>
+        </tr>
+        <tr>
+        <td><strong>SET( val1,val2,val3,....)</strong></td>
+        <td>It is used to specify a string that can have 0 or more values, chosen from a list of possible values. You can list up to 64 values at one time in a SET list.</td>
+        </tr>
+        <tr>
+        <td><strong>BLOB(size)</strong></td>
+        <td>It is used for BLOBs (Binary Large Objects). It can hold up to 65,535 bytes.</td>
+        </tr>
+        </tbody></table>
+        <p class="pq"><strong>MySQL Numeric Data Types</strong></p>
+        <table class="alt">
+        <tbody><tr>
+        <td><strong>BIT(Size)</strong></td>
+        <td>It is used for a bit-value type. The number of bits per value is specified in size. Its size can be 1 to 64. The default value is 1.</td>
+        </tr>
+        <tr>
+        <td><strong>INT(size)</strong></td>
+        <td>It is used for the integer value. Its signed range varies from -2147483648 to 2147483647 and unsigned range varies from 0 to 4294967295. The size parameter specifies the max display width that is 255. </td>
+        </tr>
+        <tr>
+        <td><strong>INTEGER(size)</strong></td>
+        <td>It is equal to INT(size).</td>
+        </tr>
+        <tr>
+        <td><strong>FLOAT(size, d)</strong></td>
+        <td>It is used to specify a floating point number. Its size parameter specifies the total number of digits. The number of digits after the decimal point is specified by <strong>d</strong> parameter.</td>
+        </tr>
+        <tr>
+        <td><strong>FLOAT(p)</strong></td>
+        <td>It is used to specify a floating point number. MySQL used p parameter to determine whether to use FLOAT or DOUBLE. If p is between 0 to24, the data type becomes FLOAT (). If p is from 25 to 53, the data type becomes DOUBLE().</td>
+        </tr>
+        <tr>
+        <td><strong>DOUBLE(size, d)</strong></td>
+        <td>It is a normal size floating point number. Its size parameter specifies the total number of digits. The number of digits after the decimal is specified by d parameter.</td>
+        </tr>
+        <tr>
+        <td><strong>DECIMAL(size, d)</strong></td>
+        <td>It is used to specify a fixed point number. Its size parameter specifies the total number of digits. The number of digits after the decimal parameter is specified by <strong>d</strong> parameter. The maximum value for the size is 65, and the default value is 10. The maximum value for <strong>d</strong> is 30, and the default value is 0.</td>
+        </tr>
+        <tr>
+        <td><strong>DEC(size, d)</strong></td>
+        <td>It is equal to DECIMAL(size, d).</td>
+        </tr>
+        <tr>
+        <td><strong>BOOL</strong></td>
+        <td>It is used to specify Boolean values true and false. Zero is considered as false, and nonzero values are considered as true.</td>
+        </tr>
+        </tbody></table>
+        <p class="pq"><strong>MySQL Date and Time Data Types </strong></p>
+        <table class="alt">
+        <tbody><tr>
+        <td><strong>DATE</strong></td>
+        <td>It is used to specify date format YYYY-MM-DD. Its supported range is from '1000-01-01' to '9999-12-31'. </td>
+        </tr>
+        <tr>
+        <td><strong>DATETIME(fsp)</strong></td>
+        <td>It is used to specify date and time combination. Its format is YYYY-MM-DD hh:mm:ss. Its supported range is from '1000-01-01 00:00:00' to 9999-12-31 23:59:59'.</td>
+        </tr>
+        <tr>
+        <td><strong>TIMESTAMP(fsp)</strong></td>
+        <td>It is used to specify the timestamp. Its value is stored as the number of seconds since the Unix epoch('1970-01-01 00:00:00' UTC). Its format is YYYY-MM-DD hh:mm:ss. Its supported range is from '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC.</td>
+        </tr>
+        <tr>
+        <td><strong>TIME(fsp)</strong></td>
+        <td>It is used to specify the time format. Its format is hh:mm:ss. Its supported range is from '-838:59:59' to '838:59:59'</td>
+        </tr>
+        <tr>
+        <td><strong>YEAR</strong></td>
+        <td>It is used to specify a year in four-digit format. Values allowed in four digit format from 1901 to 2155, and 0000. </td>
+        </tr>
+        </tbody></table>
+        </tbody></table>
+</body>
+</html>
