@@ -1,4 +1,16 @@
 
+SELECT tblstudents.StudentName,tblclasses.ClassName,SUM(tblresult.marks) AS Total, MAX(tblresult.marks) AS higest,min(tblresult.marks) AS Lowest  FROM `tblresult` JOIN tblstudents ON tblresult.StudentId=tblstudents.StudentId
+JOIN tblsubjects
+ON tblresult.SubjectId=tblsubjects.id
+JOIN tblclasses
+ON tblresult.ClassId=tblclasses.id
+GROUP BY tblresult.StudentId
+
+
+
+
+
+
 ========= procedure START ===============
 
 DELIMITER //
