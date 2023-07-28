@@ -74,7 +74,7 @@ drop view ViewName
 
 
 ======= INDEX START ==========
-Create UNIQUE IUNDEX index_name ON table_name (column_name1, column_name2…)
+Create UNIQUE INDEX index_name ON table_name (column_name1, column_name2…)
 
 SHOW INDEX FROM database_name.table_name
 ======= INDEX END ==========
@@ -85,35 +85,43 @@ SHOW INDEX FROM database_name.table_name
 
 
 ================= Function ==============
-
-DELIMITER //
-CREATE FUNCTION MarksFunction(makrs double) RETURNS VARCHAR(10)
-    
+DELIMITER $$
+CREATE FUNCTION result(
+marks INTEGER
+)
+RETURNS VARCHAR(20)
+DETERMINISTIC
 BEGIN
-    DECLARE lvl varchar(10);
- 
-    IF makrs > 20 THEN
- 		SET lvl = 'sras';
-    ELSEIF (makrs <= 15 ) THEN
-        SET lvl = 'chale';
-    ELSEIF makrs < 10 THEN
-        SET lvl = 'bekar';
-    END IF;
- 
- RETURN (lvl);
-END
+IF marks > 20 THEN
+RETURN ("sras");
+ELSE
+RETURN ("nai saru");
+END IF;
+END$$
+DELIMITER ; 
 
 
 
-call function 
 
-SELECT 
-    user_name, MarksFunction(10)
-FROM
-    newtable WHERE marks=10;
+DELIMITER $$
+CREATE FUNCTION result_new(
+marks INTEGER
+)
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+DECLARE lvl varchar(10);
+IF marks >= 20 THEN
+	SET lvl = 'if';
+ELSE
+	SET lvl = 'ok';
+	RETURN (lvl);
+END IF;
+END$$
+DELIMITER ; 
 
 
-
+SET @p0='16'; SELECT `result_new`(@p0) AS `result_new`;
 
 ================= Function END ==============
 
@@ -160,4 +168,83 @@ END
 
 
 
+
+
+
+
+CREATE TRIGGER before_update_user
+BEFORE UPDATE ON users
+
+FOR EACH ROW
+
+INSERT INTO userpassbk
+SET userid=OLD.userid,
+password = OLD.password,
+date = NOW();
+
+
+
+
 ================= tigger END ==============
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+try
+
+DELIMITER //
+CREATE FUNCTION MarksFunction(makrs double) RETURNS VARCHAR(10)
+    
+BEGIN
+    DECLARE lvl varchar(10);
+ 
+    IF makrs > 20 THEN
+ 		SET lvl = 'sras';
+    ELSEIF (makrs <= 15 ) THEN
+        SET lvl = 'chale';
+    ELSEIF makrs < 10 THEN
+        SET lvl = 'bekar';
+    END IF;
+ 
+ RETURN (lvl);
+END
+
+
+
+call function 
+
+SELECT 
+    user_name, MarksFunction(10)
+FROM
+    newtable WHERE marks=10;
+
