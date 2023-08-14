@@ -20,5 +20,6 @@
     <p>easy to emmbaded with HTML</p>
     <p>server side fast response</p>
     <p>server side scripting lang for make it executable we needs to run it from the server like for local machine we hve XAMPP</p>
+    <p>loosly type lang means variable doesnt to be declared before its used</p>
 </body>
 </html>

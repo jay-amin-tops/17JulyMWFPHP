@@ -1,3 +1,31 @@
+
+<?php
+
+$a = 50;
+// $a = $a+50;
+// echo $a;
+// $a +=50;
+// echo $a;
+$fname = "Jay ";
+$lname = "Amin ";
+echo "Full Name :   ".$fname." ".$lname."<br>";
+if ($a == "50") {
+    echo "inside if";
+    // true
+}
+if ($a === "50") {
+    echo "inside if";
+    # code...
+}else{
+    echo "inside else";
+
+}
+// === check value with their data type too
+
+
+echo 50<=>55;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

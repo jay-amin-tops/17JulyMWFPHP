@@ -29,6 +29,7 @@ if ($Marks > 50) {
     echo " Try again";
 }
 $days = "M";
+//  && || not
 switch ($days) {
     case 'M':
         echo "Monday";

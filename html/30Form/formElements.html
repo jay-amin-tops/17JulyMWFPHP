@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <table border="1" align="center">
+            <tr>
+                <td colspan="2">
+                    <h2>Form Elements</h2>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">User Name</label></td>
+                <td><input type="text" pattern="\w{3,16}" name="username" autocomplete="off" placeholder="Enter User Name" id="username"
+                        required></td>
+            </tr>
+            <tr>
+                <td><label for="">value attr example</label></td>
+                <td><input type="text" name="val" value="something" id="val"></td>
+            </tr>
+            <tr>
+                <td><label for="">readOnly</label></td>
+                <td><input type="text" name="readOnly" readonly value="something" id="readOnly"></td>
+            </tr>
+            <tr>
+                <td><label for="">disabled</label></td>
+                <td><input type="text" name="disabled" disabled value="something" id="disabled"></td>
+            </tr>
+            <tr>
+                <td><label for="">Password</label></td>
+                <td><input type="password" name="password" id="password"></td>
+            </tr>
+            <tr>
+                <td><label for="">Email</label></td>
+                <td><input type="email" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="">Gender</label></td>
+                <td>
+                    <input type="radio" name="gender" id="Male" value="Male"> <label for="Male">Male</label>
+                    <input type="radio" name="gender" id="Female" value="Female"><label for="Female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Hobbies</label></td>
+                <td>
+                    <input type="checkbox" name="chk[]" value="Music" id="Music"> <label for="Music">Music</label>
+                    <input type="checkbox" name="chk[]" value="Reading" id="Reading"> <label
+                        for="Reading">Reading</label>
+                    <input type="checkbox" name="chk[]" id="Travelling" value="Travelling"> <label
+                        for="Travelling">Travelling</label>
+                    <input type="checkbox" name="chk[]" id="Cricket" value="Cricket"> <label
+                        for="Cricket">Cricket</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">City</label></td>
+                <td>
+                    <select name="city" id="city">
+                        <option value="">Select City</option>
+                        <option value="Ahemdabad">Ahemdabad</option>
+                        <option value="Baroda">Vadodra</option>
+                        <option value="Surat">Surat</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Education</label></td>
+                <td>
+                    <select name="" id="" multiple>
+                        <option value="10th">10th</option>
+                        <option value="12th">12th</option>
+                        <option value="BCA">BCA</option>
+                        <option value="B.com">B.com</option>
+                        <option value="B.A">B.A</option>
+                        <option value="MSc.it">MSc.it</option>
+                        <option value="Mphill">Mphill</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Address</label></td>
+                <td>
+                    <textarea name="" id="" cols="50" rows="3"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Profile Pic</label></td>
+                <td><input type="file" accept="image/*" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="">DOB</label></td>
+                <td><input type="date" name="" id=""></td>
+            </tr>
+            <!-- <tr>
+            <td><label for="">datetime</label></td>
+            <td><input type="datetime" name="" id=""></td>
+        </tr> -->
+            <tr>
+                <td><label for="">datetime-local</label></td>
+                <td><input type="datetime-local" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="">month</label></td>
+                <td><input type="month" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="">week</label></td>
+                <td><input type="week" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="">Color</label></td>
+                <td><input type="color" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="">Range</label></td>
+                <td><input type="range" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="">meter</label></td>
+                <td>
+                    <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="20"> at 50/100 </meter>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">datalist</label></td>
+                <td><input list="ice-cream-flavors" type="" name="" id="">
+
+                    <datalist id="ice-cream-flavors">
+                        <option value="Chocolate">
+                        <option value="Coconut">
+                        <option value="Mint">
+                        <option value="Strawberry">
+                        <option value="Vanilla">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Search</label></td>
+                <td>
+                    <input type="search" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">telephone</label></td>
+                <td>
+                    <input type="tel" value="+91-" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Age</label></td>
+                <td>
+                    <input type="number" name="" id="">
+                    <input type="hidden" name="" id="">
+                    <input type="text" hidden name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">URL</label></td>
+                <td>
+                    <input type="url" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="" id=""></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

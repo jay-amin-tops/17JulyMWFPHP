@@ -15,6 +15,7 @@
 
     <?php
     echo "something";
+    echo $data;
     require("page.php");
     $sum = $a + 50; //Warning: Undefined variable $a in C:\xampp\htdocs\laravel\04April_laravel_shailesh_TTS2\PHP\09ErrorsinPHP.php on line 18
     echo $sum;
