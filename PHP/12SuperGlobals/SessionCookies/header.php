@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,11 +32,24 @@
         <li class="nav-item">
           <a class="nav-link" href="About.php">About</a>
         </li>
+        
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+        <?php
+          // echo "<pre>";
+          // print_r($_COOKIE);
+          // print_r($_SESSION['UserData']['username']);
+          if (isset($_SESSION['UserData'])) { ?>
+             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['UserData']['username']; ?></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="logout.php">Signout</a>
+          </div>
+          <?php } else { ?>
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="login.php">Signin</a>
           </div>
+          <?php } ?>
+         
         </li>
       </ul>
       <form class="d-flex">

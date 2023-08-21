@@ -4,6 +4,9 @@
 if (isset($_POST['login'])) {
     if ($_POST['username'] == $_COOKIE['uname'] && $_POST['password'] == $_COOKIE['pass'] ) {
         echo "valid user";
+        // $_SESSION['UserData'] = $_COOKIE['uname'];
+        $_SESSION['UserData'] = array( "username" => $_COOKIE['uname']);
+
         header("location:dashboard.php");
     }else{
         echo "invalid user";
