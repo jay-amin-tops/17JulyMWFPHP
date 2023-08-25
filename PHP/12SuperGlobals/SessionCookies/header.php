@@ -32,6 +32,12 @@
         <li class="nav-item">
           <a class="nav-link" href="About.php">About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.php">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Product2.php">Product2</a>
+        </li>
         
         <li class="nav-item dropdown">
         <?php
