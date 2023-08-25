@@ -1,35 +1,35 @@
-<?php 
+<?php
 include("header.php");
 // include("header.php");
 // include("header.php");
 // include("header.php");
 
 if (isset($_POST['prod1-submit'])) {
-    // echo "<pre>";
-    // print_r($_REQUEST); 
-      
-        // $_SESSION['UserData'] = $_COOKIE['uname'];
-        $_SESSION['cartdata1'] = array( "Productname" => $_REQUEST['prod_title'],"Productprice" => $_REQUEST['prod_price'],"Productquantity" => $_REQUEST['prod_quantity']);
-        // $_SESSION['cartdata1'] = array( "Productprice" => $_COOKIE['pprice']);
-        // $_SESSION['cartdata1'] = array( "Productquantity" => $_COOKIE['pquantity']);
+  // echo "<pre>";
+  // print_r($_REQUEST); 
+  // $_SESSION['UserData'] = $_COOKIE['uname'];
+  $_SESSION['cartData']['cartdata1'] = array("Productname" => $_REQUEST['prod_title'], "Productprice" => $_REQUEST['prod_price'], "Productquantity" => $_REQUEST['prod_quantity']);
+  // $_SESSION['cartdata1'] = array( "Productprice" => $_COOKIE['pprice']);
+  // $_SESSION['cartdata1'] = array( "Productquantity" => $_COOKIE['pquantity']);
+ header("location:cart.php");
+}
+if (isset($_POST['prod2-submit'])) {
+  // echo "<pre>";
+  // print_r($_REQUEST); 
+  // $_SESSION['UserData'] = $_COOKIE['uname'];
+  $_SESSION['cartData']['cartdata2'] = array("Productname" => $_REQUEST['prod_title'], "Productprice" => $_REQUEST['prod_price'], "Productquantity" => $_REQUEST['prod_quantity']);
+  // $_SESSION['cartdata1'] = array( "Productprice" => $_COOKIE['pprice']);
+  // $_SESSION['cartdata1'] = array( "Productquantity" => $_COOKIE['pquantity']);
+ header("location:cart.php");
+}
+?>
+<section style="background-color: #eee;">
 
-
-
-         header("location:cart.php");
-    }else{
-        echo "invalid user";
-
-    }
-
- ?>
- <section style="background-color: #eee;">
- 
   <div class="container py-5">
     <div class="row">
       <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
         <div class="card text-black">
-          <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-mini-blue-witb-2021_FMT_WHH?wid=560&hei=744&fmt=jpeg&qlt=90&.v=1638579083000"
-            class="card-img-top" alt="iPhone" />
+          <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-mini-blue-witb-2021_FMT_WHH?wid=560&hei=744&fmt=jpeg&qlt=90&.v=1638579083000" class="card-img-top" alt="iPhone" />
           <div class="card-body">
             <div class="text-center mt-1">
               <h4 class="card-title">iPhone X</h4>
@@ -77,36 +77,35 @@ if (isset($_POST['prod1-submit'])) {
             </div>
 
             <div class="d-flex flex-row">
-            <form method="post">
-                        <div class="row">
-                            <div class="col">
-                                <span>&#8377;1235</span>
-                            </div>
-                            <div class="col">
-                                <input type="hidden" name="prod_title" value="prod1" id="">
-                                <input type="hidden" name="prod_price" value="1235" id="">
-                                <input type="hidden" name="prod_image" value="1.jpg" id="">
-                                <input type="number" class="form-control" name="prod_quantity" value="1" id="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-sm btn-primary" type="submit" name="prod1-submit">Add To cart <i class="fa-solid fa-cart-shopping"></i></button>
-                            </div>
-                        </div>
-                    </form>  
-            <!-- <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+              <form method="post">
+                <div class="row">
+                  <div class="col">
+                    <span>&#8377;1235</span>
+                  </div>
+                  <div class="col">
+                    <input type="hidden" name="prod_title" value="prod1" id="">
+                    <input type="hidden" name="prod_price" value="1235" id="">
+                    <input type="hidden" name="prod_image" value="1.jpg" id="">
+                    <input type="number" class="form-control" name="prod_quantity" value="1" id="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button class="btn btn-sm btn-primary" type="submit" name="prod1-submit">Add To cart <i class="fa-solid fa-cart-shopping"></i></button>
+                  </div>
+                </div>
+              </form>
+              <!-- <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
                 Learn more
               </button> -->
-            <!-- <button type="button" class="btn btn-danger flex-fill ms-1">Buy now</button> -->
+              <!-- <button type="button" class="btn btn-danger flex-fill ms-1">Buy now</button> -->
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
         <div class="card text-black">
-          <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/mobile/6/x/j/-original-imaghxejqvpwfqh2.jpeg?q=90"
-            class="card-img-top" alt="iPhone" />
+          <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/mobile/6/x/j/-original-imaghxejqvpwfqh2.jpeg?q=90" class="card-img-top" alt="iPhone" />
           <div class="card-body">
             <div class="text-center mt-1">
               <h4 class="card-title">iPhone 11</h4>
@@ -152,18 +151,41 @@ if (isset($_POST['prod1-submit'])) {
             </div>
 
             <div class="d-flex flex-row">
+              <form method="post">
+                <div class="row">
+                  <div class="col">
+                    <span>&#8377;1235</span>
+                  </div>
+                  <div class="col">
+                    <input type="hidden" name="prod_title" value="prod1" id="">
+                    <input type="hidden" name="prod_price" value="1235" id="">
+                    <input type="hidden" name="prod_image" value="1.jpg" id="">
+                    <input type="number" class="form-control" name="prod_quantity" value="1" id="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button class="btn btn-sm btn-primary" type="submit" name="prod2-submit">Add To cart <i class="fa-solid fa-cart-shopping"></i></button>
+                  </div>
+                </div>
+              </form>
+              <!-- <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
+                Learn more
+              </button> -->
+              <!-- <button type="button" class="btn btn-danger flex-fill ms-1">Buy now</button> -->
+            </div>
+            <!-- <div class="d-flex flex-row">
               <button type="button" class="btn btn-primary flex-fill me-1" data-mdb-ripple-color="dark">
                 Learn more
               </button>
               <button type="button" class="btn btn-danger flex-fill ms-1">Buy now</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
         <div class="card text-black">
-          <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_design_09142021_big.jpg.slideshow-large.jpg"
-            class="card-img-top" alt="iPhone" />
+          <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_design_09142021_big.jpg.slideshow-large.jpg" class="card-img-top" alt="iPhone" />
           <div class="card-body">
             <div class="text-center mt-1">
               <h4 class="card-title">iPhone 11 Pro</h4>
