@@ -455,7 +455,7 @@ echo 50<=>55;
     // echo $a;
     echo 10 == 10.00;
     echo "<br>=========== spaceship START========== <br>";
-    echo 8 <=> 10;
+    echo 15 <=> 10;
     echo "<br>=========== spaceship END========== <br>";
 
     $marks = 41;
@@ -466,6 +466,10 @@ echo 50<=>55;
         # code...
     }
     echo ($marks > 50) ? "Pass" : "Try again";
+
+    echo $marks??"data";
+
+
     ?>
 </body>
 
