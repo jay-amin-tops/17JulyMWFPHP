@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +35,6 @@
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="Login.php">Login</a>
-            <a class="dropdown-item" href="logout.php">Logout</a>
           </div>
         </li>
       </ul>

@@ -1,9 +1,13 @@
 <?php 
 include_once("header.php");
-include_once("header.php");
-include_once("header.php");
-include_once("header.php");
  ?>
-<h2>Features page</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Features page</h2>
+        </div>
+    </div>
+</div>
 </body>
 </html>

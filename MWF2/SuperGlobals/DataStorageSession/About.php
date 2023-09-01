@@ -1,11 +1,11 @@
-<?php 
-require_once("header.php"); 
-require_once("header.php"); 
-require_once("header.php"); 
-require_once("header.php"); 
+<?php require_once("header.php"); ?>
 
-?>
-
-<h2>About page</h2>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>About page</h2>
+        </div>
+    </div>
+</div>
 </body>
 </html>
