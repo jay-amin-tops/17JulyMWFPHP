@@ -1,0 +1,28 @@
+1. Differentiate between variables and constants in PHP
+2. What is a session in PHP? (server side data storge, secure)
+2. What is a cookies in PHP? (clinet side data storge, 4kb, less secure)
+3. What does PEAR stands for? (PEAR stands for “PHP Extension and Application Repository)
+4. Explain the difference between $message and $$message.
+
+
+$user = ‘bob’ is equivalent to
+$holder = ‘user’;
+$$holder = ‘bob’;
+
+Anwser 2:
+They are both variables. But $message is a variable with a fixed name. $$message is a variable who’s name is stored in $message. For example, if $message contains “var”, $$message is the same as $var.
+
+
+$x = "abc";  
+$$x = 200;  
+echo $x."<br/>";  // abc
+echo $$x."<br/>"; // 200  
+echo $abc; // 200 
+
+
+5. Is PHP a case-sensitive language?
+
+7. What are the rules for naming a PHP variable?
+
+11. What is the purpose of @ in PHP?
+
