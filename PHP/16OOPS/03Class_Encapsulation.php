@@ -9,6 +9,7 @@
 
 <body>
 
+    <p>Encapsulation is a process that we can wrapping the data into a single unit its done through class</p>
     <h2>Class</h2>
     <p>Class is a Collection of datamember and member functions only</p>
     <p>its provides basic level of securty to our code</p>
@@ -44,10 +45,17 @@ echo "<br>";
 
 
 
-class car {
-    function wheel(){}
-    function strng(){}
-    function toproof(){}
+class car
+{
+    function wheel()
+    {
+    }
+    function strng()
+    {
+    }
+    function toproof()
+    {
+    }
 }
 
 
