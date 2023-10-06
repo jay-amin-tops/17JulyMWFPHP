@@ -1,0 +1,6 @@
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 06-Oct-2023 11:23:01 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 06-Oct-2023 11:23:12 AM
