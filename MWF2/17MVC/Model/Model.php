@@ -8,13 +8,13 @@ class Model {
 
         try {
             $this->connection = new mysqli("localhost","root","","masterdatabase"); 
-            echo "<pre>";
-            print_r($this->connection);
-            echo "</pre>";
+            // echo "<pre>";
+            // print_r($this->connection);
+            // echo "</pre>";
         } catch (\Throwable $th) {
-            echo "<pre>";
-            print_r($th->getMessage());
-            echo "</pre>";
+            // echo "<pre>";
+            // print_r($th->getMessage());
+            // echo "</pre>";
             if (!file_exists('log')) {
                 mkdir("log");
             } 
@@ -24,6 +24,21 @@ class Model {
             file_put_contents($FileName,$ErrorMsg,FILE_APPEND);
                 
         }
+    }
+    function login($uname,$pass){
+        echo $SQL = "SELECT * FROM users WHERE password = '$pass' AND (username='$uname' OR email ='$uname' OR mobile ='$uname')";
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if ($SQLEx>0 ) {
+            $ResData["Data"] =1 ; 
+            $ResData["Code"] =1 ; 
+            $ResData["Msg"] ="Success"; 
+        }else{
+            $ResData["Data"] =0 ; 
+            $ResData["Code"] =0 ; 
+            $ResData["Msg"] ="try again"; 
+        }
+        return $ResData;
     }
     function insert($tbl,$data){
         // echo "<pre>";

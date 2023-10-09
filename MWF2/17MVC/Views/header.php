@@ -85,12 +85,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<form action="#" method="post">
 									<div class="form-group">
 										<label class="mb-2">Email address</label>
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
+										<input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
 										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Password</label>
-										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
+										<input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="" required="">
 									</div>
 									<div class="form-check mb-2">
 										<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -101,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<a href="registration">Create new account</a>
 										</div>
 									</div>
-									<button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
+									<button type="submit" name="btn-login" class="btn btn-primary submit mb-4">Sign In</button>
 
 								</form>
 							</div>
