@@ -108,7 +108,7 @@
 	<!-- //footer -->
 
 	<!--jQuery-->
-	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/jquery-2.2.3.min.js"></script>
 	<!-- newsletter modal -->
 	<!-- Modal -->
 	<!-- Modal -->
@@ -142,19 +142,19 @@
 		</div>
 	</div>
 	<script>
-		$(document).ready(function () {
-			$("#myModal").modal();
-		});
+		// $(document).ready(function () {
+		// 	$("#myModal").modal();
+		// });
 	</script>
 	<!-- // modal -->
 
 	<!--search jQuery-->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<script src="js/classie-search.js"></script>
-	<script src="js/demo1-search.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/modernizr-2.6.2.min.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/classie-search.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/demo1-search.js"></script>
 	<!--//search jQuery-->
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/minicart.js"></script>
 	<script>
 		googles.render();
 
@@ -184,7 +184,7 @@
 	</script>
 	<!-- carousel -->
 	<!-- Count-down -->
-	<script src="js/simplyCountdown.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/simplyCountdown.js"></script>
 	<link href="css/simplyCountdown.css" rel='stylesheet' type='text/css' />
 	<script>
 		var d = new Date();
@@ -195,7 +195,7 @@
 		});
 	</script>
 	<!--// Count-down -->
-	<script src="js/owl.carousel.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/owl.carousel.js"></script>
 	<script>
 		$(document).ready(function () {
 			$('.owl-carousel').owlCarousel({
@@ -245,8 +245,8 @@
 		});
 	</script>
 	<!-- //dropdown nav -->
-  <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
+  <script src="<?php echo $this->assets_url; ?>js/move-top.js"></script>
+    <script src="<?php echo $this->assets_url; ?>js/easing.js"></script>
     <script>
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
@@ -276,7 +276,7 @@
     </script>
     <!--// end-smoth-scrolling -->
 
-	<script src="js/bootstrap.js"></script>
+	<script src="<?php echo $this->assets_url; ?>js/bootstrap.js"></script>
 	<!-- js file -->
 </body>
 

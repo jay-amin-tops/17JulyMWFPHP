@@ -1,0 +1,165 @@
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:08:25 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:08:25 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:08:25 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:08:25 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:08:25 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:03 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:03 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:03 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:03 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:03 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:06 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:06 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:06 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:06 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:06 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:34 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:34 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:34 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:34 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:09:34 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:15 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:15 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:15 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:15 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:15 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:40 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:40 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:40 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:40 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:40 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:51 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:51 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:51 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:51 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:10:51 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:14 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:14 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:14 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:14 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:14 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:24 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:24 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:24 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:24 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:24 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:35 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:35 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:35 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:35 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:35 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:59 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:59 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:59 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:59 AM
+
+Error Msg  >>> Access denied for user 'root1'@'localhost' (using password: NO)
+Error Date >>> 09-Oct-2023 11:11:59 AM

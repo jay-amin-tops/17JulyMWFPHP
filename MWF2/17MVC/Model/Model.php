@@ -7,7 +7,7 @@ class Model {
     public function __construct() {
 
         try {
-            $this->connection = new mysqli("localhost","root1","","masterdatabase"); 
+            $this->connection = new mysqli("localhost","root","","masterdatabase"); 
             echo "<pre>";
             print_r($this->connection);
             echo "</pre>";
@@ -25,9 +25,31 @@ class Model {
                 
         }
     }
+    function insert($tbl,$data){
+        // echo "<pre>";
+        // print_r($data);
+        // $clm = array_keys($data);
+        // print_r($clm);
+        $clm = implode(",",array_keys($data));
+        $vals = implode("','",$data);
+        // echo "</pre>";
+        $SQL = "INSERT INTO $tbl ($clm) VALUES ('$vals')";
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if ($SQLEx>0 ) {
+            $ResData["Data"] =1 ; 
+            $ResData["Code"] =1 ; 
+            $ResData["Msg"] ="Success"; 
+        }else{
+            $ResData["Data"] =0 ; 
+            $ResData["Code"] =0 ; 
+            $ResData["Msg"] ="try again"; 
+        }
+        return $ResData;
+    }
 }
 
-$Model = new Model;
+// $Model = new Model;
 
 
 ?>

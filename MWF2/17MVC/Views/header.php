@@ -23,7 +23,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<link href="http://localhost/laravel/17JulyPHPMWF9/PHP/17MVC/Assests/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="<?php echo $this->assets_url; ?>/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!-- <link href="http://localhost/laravel/17JulyPHPMWF9/PHP/17MVC/Assests/css/bootstrap.css" rel='stylesheet' type='text/css' /> -->
 	<link href="Assests/css/login_overlay.css" rel='stylesheet' type='text/css' />
 	<link href="<?php echo $this->assets_url; ?>css/style6.css" rel='stylesheet' type='text/css' />
 	<link rel="stylesheet" href="<?php echo $this->assets_url; ?>css/shop.css" type="text/css" />
@@ -94,6 +95,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="form-check mb-2">
 										<input type="checkbox" class="form-check-input" id="exampleCheck1">
 										<label class="form-check-label" for="exampleCheck1">Check me out</label>
+									</div>
+									<div class="row">
+										<div class="col">
+											<a href="registration">Create new account</a>
+										</div>
 									</div>
 									<button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
 

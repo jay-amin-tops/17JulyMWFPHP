@@ -1,9 +1,12 @@
 <?php
-class Controller{
+include("Model/Model.php");
+
+class Controller extends Model{
     public $base_url = "http://localhost/laravel/17JulyPHPMWF9/PHP/17MVC/";
     // public $assets_url = "http://localhost/laravel/17JulyPHPMWF9/PHP/17MVC/Assests";
     public $assets_url = "";
     public function __construct() {
+        parent::__construct();
         // $assets_url = $this->base_url."Assests/";
         // echo "<pre>";
         // print_r($_SERVER);
@@ -35,6 +38,19 @@ class Controller{
                     include_once("Views/header.php");
                     echo "<h2>About us</h2>";
                     include_once("Views/footer.php");
+                    break;
+                case '/registration':
+                    include_once("Views/header.php");
+                    include_once("Views/signup.php");
+                    include_once("Views/footer.php");
+                    if (isset($_POST['btn-regist'])) {
+                        // echo "<pre>";
+                        // print_r($_REQUEST);
+                        // echo "</pre>";
+                        array_pop($_POST);
+                        $this->insert("users",$_POST);
+                    }
+
                     break;
                 
                 default:
