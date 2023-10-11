@@ -71,6 +71,10 @@ class Controller extends Model
                 case '/admindashboard':
                     echo "<h2>admindashboard</h2>";
                     break;
+                case '/logout':
+                    session_destroy();
+                    header("location:home");
+                    break;
                 case '/registration':
                     include_once("Views/header.php");
                     include_once("Views/signup.php");
