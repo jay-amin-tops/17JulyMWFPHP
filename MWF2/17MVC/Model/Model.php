@@ -5,7 +5,6 @@ class Model {
     // public $connection = new mysqli("localhost","root","","masterdatabase"); 
     public $connection = null; 
     public function __construct() {
-
         try {
             $this->connection = new mysqli("localhost","root","","masterdatabase"); 
             // echo "<pre>";
@@ -26,11 +25,43 @@ class Model {
         }
     }
     function login($uname,$pass){
-        echo $SQL = "SELECT * FROM users WHERE password = '$pass' AND (username='$uname' OR email ='$uname' OR mobile ='$uname')";
+        $SQL = "SELECT * FROM users WHERE password = '$pass' AND (username='$uname' OR email ='$uname' OR mobile ='$uname')";
         $SQLEx = $this->connection->query($SQL);
-        // print_r($SQLEx);
-        if ($SQLEx>0 ) {
-            $ResData["Data"] =1 ; 
+        // print_r($SQLEx->num_rows);
+        if ($SQLEx->num_rows > 0 ) {
+            // $FetchData = $SQLEx->fetch_all(); // return multiple data in index array
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            // $FetchData = $SQLEx->fetch_array(); // return data in Associative and numeric array
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            // $FetchData = $SQLEx->fetch_assoc(); // return data in Associative array
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            // $FetchData = $SQLEx->fetch_column(); //return column
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            // $FetchData = $SQLEx->fetch_field(); // DB and table info 
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            // $FetchData = $SQLEx->fetch_fields(); // DB Fields info 
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            // $FetchData = $SQLEx->fetch_row(); // single numeric data
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            $FetchData = $SQLEx->fetch_object();
+            // echo "<pre>";
+            // print_r($FetchData);
+            // echo "<pre>";
+            $ResData["Data"] =$FetchData ; 
             $ResData["Code"] =1 ; 
             $ResData["Msg"] ="Success"; 
         }else{
@@ -65,6 +96,3 @@ class Model {
 }
 
 // $Model = new Model;
-
-
-?>

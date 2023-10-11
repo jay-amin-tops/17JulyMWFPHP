@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include("Model/Model.php");
 
 class Controller extends Model
@@ -8,6 +10,7 @@ class Controller extends Model
     public $assets_url = "";
     public function __construct()
     {
+        ob_start();
         parent::__construct();
         // $assets_url = $this->base_url."Assests/";
         // echo "<pre>";
@@ -44,12 +47,29 @@ class Controller extends Model
                         // echo "<pre>";
                         // print_r($LoginRes);
                         // echo "</pre>";
+                        if ($LoginRes['Code'] ==1) {
+                            $_SESSION['UserData'] = $LoginRes['Data'];
+                            // echo "<pre>";
+                            // print_r($LoginRes['Data']->role_id);
+                            // echo "</pre>";
+                            // exit;
+                            if ($LoginRes['Data']->role_id == 1) {
+                                header("location:admindashboard");
+                            }else{
+                                header("location:home");
+                            }
+                        }else{
+                            echo "<script>alert('invalid user')</script>";
+                        }
                     }
                     break;
                 case '/about':
                     include_once("Views/header.php");
                     echo "<h2>About us</h2>";
                     include_once("Views/footer.php");
+                    break;
+                case '/admindashboard':
+                    echo "<h2>admindashboard</h2>";
                     break;
                 case '/registration':
                     include_once("Views/header.php");
@@ -72,6 +92,7 @@ class Controller extends Model
         } else {
             header("location:home");
         }
+        ob_flush();
     }
     // public function __construct($dbname) {
     //     echo "Inside Constr";
