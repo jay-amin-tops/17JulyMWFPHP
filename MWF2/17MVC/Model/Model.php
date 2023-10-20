@@ -71,6 +71,23 @@ class Model {
         }
         return $ResData;
     }
+    function select($tbl){
+        $SQL = "SELECT * FROM $tbl";
+        $SQLEx = $this->connection->query($SQL);
+        if ($SQLEx->num_rows > 0 ) {
+            while ( $Data = $SQLEx->fetch_object()) {
+                $FetchData[] = $Data;    
+            }
+            $ResData["Data"] =$FetchData ; 
+            $ResData["Code"] =1 ; 
+            $ResData["Msg"] ="Success"; 
+        }else{
+            $ResData["Data"] =0 ; 
+            $ResData["Code"] =0 ; 
+            $ResData["Msg"] ="try again"; 
+        }
+        return $ResData;   
+    }
     function insert($tbl,$data){
         // echo "<pre>";
         // print_r($data);
@@ -92,6 +109,26 @@ class Model {
             $ResData["Msg"] ="try again"; 
         }
         return $ResData;
+    }
+
+    function delete($tbl,$where){
+        $SQL = "DELETE FROM $tbl WHERE";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = '$value' AND";
+        }
+        $SQL = rtrim($SQL,"AND");
+        // echo $SQL;
+        $SQLEx = $this->connection->query($SQL);
+        if ($SQLEx > 0 ) {
+            $ResData["Data"] =1 ; 
+            $ResData["Code"] =1 ; 
+            $ResData["Msg"] ="Success"; 
+        }else{
+            $ResData["Data"] =0 ; 
+            $ResData["Code"] =0 ; 
+            $ResData["Msg"] ="try again"; 
+        }
+        return $ResData;   
     }
 }
 

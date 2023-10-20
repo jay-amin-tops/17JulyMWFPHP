@@ -69,7 +69,22 @@ class Controller extends Model
                     include_once("Views/footer.php");
                     break;
                 case '/admindashboard':
-                    echo "<h2>admindashboard</h2>";
+                    // echo "<h2>admindashboard</h2>";
+                    include_once("Views/Admin/AdminHeader.php");
+                    include_once("Views/Admin/AdminMainPage.php");
+                    include_once("Views/Admin/AdminFooter.php");
+                    break;
+                case '/allusers':
+                    $AllUsersData = $this->select('users');
+                    include_once("Views/Admin/AdminHeader.php");
+                    include_once("Views/Admin/listallusers.php");
+                    include_once("Views/Admin/AdminFooter.php");
+                    break;
+                case '/deleteuser':
+                    $Res = $this->delete("users", array("id"=>$_REQUEST['userid']) );
+                    if ($Res['Code'] == 1) {
+                        header("location:allusers");
+                    }
                     break;
                 case '/logout':
                     session_destroy();
