@@ -47,7 +47,7 @@ class Controller extends Model
                         // echo "<pre>";
                         // print_r($LoginRes);
                         // echo "</pre>";
-                        if ($LoginRes['Code'] ==1) {
+                        if ($LoginRes['Code'] == 1) {
                             $_SESSION['UserData'] = $LoginRes['Data'];
                             // echo "<pre>";
                             // print_r($LoginRes['Data']->role_id);
@@ -55,10 +55,10 @@ class Controller extends Model
                             // exit;
                             if ($LoginRes['Data']->role_id == 1) {
                                 header("location:admindashboard");
-                            }else{
+                            } else {
                                 header("location:home");
                             }
-                        }else{
+                        } else {
                             echo "<script>alert('invalid user')</script>";
                         }
                     }
@@ -81,9 +81,23 @@ class Controller extends Model
                     include_once("Views/Admin/AdminFooter.php");
                     break;
                 case '/deleteuser':
-                    $Res = $this->delete("users", array("id"=>$_REQUEST['userid']) );
+                    $Res = $this->delete("users", array("id" => $_REQUEST['userid']));
                     if ($Res['Code'] == 1) {
                         header("location:allusers");
+                    }
+                    break;
+                case '/edituser':
+                    $UserDataByIdRes = $this->selectWhere("users", array("id" => $_REQUEST['userid'], "role_id" => "2"));
+                    include_once("Views/Admin/AdminHeader.php");
+                    include_once("Views/Admin/editusers.php");
+                    include_once("Views/Admin/AdminFooter.php");
+                    if (isset($_POST['btn-update'])) {
+                        $LoginRes = $this->update("users", array("username" => $_REQUEST['username']), array("id" => $_REQUEST['userid']));
+                        if ($LoginRes['Code'] == 1) {
+                            header("location:allusers");
+                        } else {
+                            echo "<script>alert('error while updating')</script>";
+                        }
                     }
                     break;
                 case '/logout':

@@ -47,6 +47,7 @@
                                 <td>
                                     <?php 
                                     if ($value->role_id != 1) { ?> 
+                                    <a href="edituser?userid=<?php echo $value->id;?>">Edit</a>
                                     <a href="deleteuser?userid=<?php echo $value->id;?>">Delete</a>
                                     <?php } ?>
                                 

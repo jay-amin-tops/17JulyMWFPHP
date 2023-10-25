@@ -88,6 +88,35 @@ class Model {
         }
         return $ResData;   
     }
+    function selectWhere($tbl,$where){
+        $SQL = "SELECT * FROM $tbl";
+        
+        $SQL .= " WHERE ";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = '$value' AND";
+            # code...
+        }
+        // echo $SQL;
+        // $SQL = trim($SQL,"AND");
+        $SQL = rtrim($SQL,"AND");
+        // echo "<br>";
+        // echo $SQL;
+        // exit;
+        $SQLEx = $this->connection->query($SQL);
+        if ($SQLEx->num_rows > 0 ) {
+            while ( $Data = $SQLEx->fetch_object()) {
+                $FetchData[] = $Data;    
+            }
+            $ResData["Data"] =$FetchData ; 
+            $ResData["Code"] =1 ; 
+            $ResData["Msg"] ="Success"; 
+        }else{
+            $ResData["Data"] =0 ; 
+            $ResData["Code"] =0 ; 
+            $ResData["Msg"] ="try again"; 
+        }
+        return $ResData;   
+    }
     function insert($tbl,$data){
         // echo "<pre>";
         // print_r($data);
@@ -97,6 +126,35 @@ class Model {
         $vals = implode("','",$data);
         // echo "</pre>";
         $SQL = "INSERT INTO $tbl ($clm) VALUES ('$vals')";
+        $SQLEx = $this->connection->query($SQL);
+        // print_r($SQLEx);
+        if ($SQLEx>0 ) {
+            $ResData["Data"] =1 ; 
+            $ResData["Code"] =1 ; 
+            $ResData["Msg"] ="Success"; 
+        }else{
+            $ResData["Data"] =0 ; 
+            $ResData["Code"] =0 ; 
+            $ResData["Msg"] ="try again"; 
+        }
+        return $ResData;
+    }
+    function update($tbl,$data,$where){
+        $SQL = "UPDATE $tbl SET";
+
+        foreach ($data as $dkey => $dvalue) {
+            $SQL .= " $dkey = '$dvalue' ,";
+            # code...
+        }
+        $SQL = rtrim($SQL,",");
+        $SQL .= " WHERE ";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = '$value' AND";
+            # code...
+        }
+        $SQL = rtrim($SQL,"AND");
+        // echo $SQL;
+        // exit;
         $SQLEx = $this->connection->query($SQL);
         // print_r($SQLEx);
         if ($SQLEx>0 ) {
