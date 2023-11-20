@@ -1,21 +1,26 @@
 <?php
 
 include_once("Model/Model.php");
-class Controller extends Model{
+session_start();
+class Controller extends Model
+{
     public $base_url = "http://localhost/laravel/17JulyPHPMWF9/MWF2/18MVC_rev/";
     public $assets_url = "";
     public $dynamic_assets_url = "";
-    public function __construct(){
+    public $dynamic_assets_url_admin = "http://localhost/laravel/17JulyPHPMWF9/MWF2/18MVC_rev/Assets/admin_assets/";
+    public function __construct()
+    {
+        ob_start();
         // echo "Data";
         parent::__construct();
-        $UrlArray = explode("/",$_SERVER['REQUEST_URI']); 
-        $this->assets_url = $this->base_url."/Assets/";
+        $UrlArray = explode("/", $_SERVER['REQUEST_URI']);
+        $this->assets_url = $this->base_url . "/Assets/";
         // echo "<pre>";
         // print_r($_SERVER);
         // print_r($UrlArray);
-        $this->dynamic_assets_url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME']."/".$UrlArray[1]."/".$UrlArray[2]."/".$UrlArray[3]."/".$UrlArray[4]."/Assets/"; 
+        $this->dynamic_assets_url = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['SERVER_NAME'] . "/" . $UrlArray[1] . "/" . $UrlArray[2] . "/" . $UrlArray[3] . "/" . $UrlArray[4] . "/Assets/";
         if (isset($_SERVER['PATH_INFO'])) {
-            
+
             switch ($_SERVER['PATH_INFO']) {
                 case '/':
                 case '/index':
@@ -23,7 +28,7 @@ class Controller extends Model{
                     include_once("Views/header.php");
                     include_once("Views/mainContent.php");
                     include_once("Views/footer.php");
-                   
+
                     break;
                 case '/about':
                     include_once("Views/header.php");
@@ -44,29 +49,159 @@ class Controller extends Model{
                     include_once("Views/header.php");
                     include_once("Views/login.php");
                     include_once("Views/footer.php");
+                    if (isset($_POST['btn-login'])) {
+                        $InsertRes = $this->login($_POST['username'], $_POST['password']);
+                        if ($InsertRes['Code'] == 1) {
+                            $_SESSION['UserData'] = $InsertRes['Data'];
+                            if ($InsertRes['Data']->user_role == 1) {
+                                // echo "inside admin";
+                                header("location:admindashboard");
+                            } else {
+                                header("location:home");
+                                // echo "inside user";
+                                # code...
+                            }
+
+
+                            // echo "<script>alert('Login success')</script>";
+                        } else {
+                            echo "<script>alert('Invalid User')</script>";
+                        }
+                    }
                     break;
+
                 case '/registration':
                     include_once("Views/header.php");
                     include_once("Views/registration.php");
                     include_once("Views/footer.php");
-                    echo "<pre>";
-                    print_r($_REQUEST);
-                    echo "</pre>";
-                    $Hoobies = implode(",",$_POST['chk']);
-                    $Data = array("username"=>$_POST['username'],
-                    "password"=>$_POST['password'],
-                    "fullname"=>$_POST['fname']." ".$_POST['lname'],
-                    "dateofbirth"=>$_POST['dob'],
-                    "mobile"=>$_POST['mobile'],
-                    "email"=>$_POST['email'],
-                    "gender"=>$_POST['gender'],
-                    "hobbies"=>$Hoobies,
-                    "address"=>$_POST['address'],
-                );
-                    $this->insert("users",$Data);
 
+
+                    if (isset($_POST['btn-regist'])) {
+                        // echo "<pre>";
+                        // print_r($_REQUEST);
+                        // print_r($_FILES);
+                        // echo "</pre>";
+
+                        // exit;
+                        $allowed_image_extension = array(
+                            "png",
+                            "PNG",
+                            "jpg",
+                            "JPG",
+                            "jpeg",
+                            "JPEG",
+                            "webp"
+                        );
+                        $file_extension = pathinfo($_FILES["profile_pic"]["name"], PATHINFO_EXTENSION);
+                        $fileinfo = @getimagesize($_FILES["profile_pic"]["tmp_name"]);
+
+                        $width = $fileinfo[0];
+                        $height = $fileinfo[1];
+                        if (!file_exists($_FILES["profile_pic"]["tmp_name"])) {
+                            $response = array(
+                                "type" => "error",
+                                "message" => "Choose image file to upload."
+                            );
+                        }    // Validate file input to check if is with valid extension
+                        else if (!in_array($file_extension, $allowed_image_extension)) {
+                            $response = array(
+                                "type" => "error",
+                                "message" => "Upload valid images. Only PNG and JPEG are allowed."
+                            );
+                        }    // Validate image file size
+                        else if (($_FILES["profile_pic"]["size"] > 2000000)) {
+                            $response = array(
+                                "type" => "error",
+                                "message" => "Image size exceeds 2MB"
+                            );
+                            // }    // Validate image file dimension
+                            // else if ($width > "300" || $height > "200") {
+                            //     $response = array(
+                            //         "type" => "error",
+                            //         "message" => "Image dimension should be within 300X200"
+                            //     );
+                        } else {
+
+                            echo "inside else";
+                            $target = "Assets/uploads/" . basename($_FILES["profile_pic"]["name"]);
+                            if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $target)) {
+                                $response = array(
+                                    "type" => "success",
+                                    "message" => "Image uploaded successfully.",
+                                    "name" => $_FILES["profile_pic"]["name"]
+                                );
+                                $ImageName = $_FILES["profile_pic"]["name"];
+                            } else {
+                                $response = array(
+                                    "type" => "error",
+                                    "message" => "Problem in uploading image files."
+                                );
+                                $ImageName = "default.jpg";
+                            }
+
+                            $Hoobies = implode(",", $_POST['chk']);
+                            $Data = array(
+                                "username" => $_POST['username'],
+                                "password" => $_POST['password'],
+                                "fullname" => $_POST['fname'] . " " . $_POST['lname'],
+                                "dateofbirth" => $_POST['dob'],
+                                "mobile" => $_POST['mobile'],
+                                "email" => $_POST['email'],
+                                "gender" => $_POST['gender'],
+                                "hobbies" => $Hoobies,
+                                "address" => $_POST['address'],
+                                "profile_pic" => $ImageName,
+                            );
+                            // echo $response['message'];
+                            $InsertRes = $this->insert("users", $Data);
+                            if ($InsertRes['Code'] == 1) {
+                                echo "<script>
+                                alert('Registration complete successfully')
+                                window.location.href = 'login'
+                                </script>";
+                            } else {
+                                echo "<script>alert('Error while insering data please try again after sometime ')</script>";
+                            }
+                        }
+                        // echo $response['message'];
+                        echo '<script>
+                            alert("' . $response['message'] . '")
+                        </script>';
+
+                        // if ($_FILES["profile_pic"]["error"] == 0) {
+                        //     $file_extension = pathinfo($_FILES["profile_pic"]["name"], PATHINFO_EXTENSION);
+
+                        //     if ($_FILES["profile_pic"]["size"] > 400000) {
+                        //         move_uploaded_file($_FILES["profile_pic"]["tmp_name"],"uploads/");
+                        //     }else{
+                        //         echo "image size larger than 4MB";
+                        //     }
+                        // }
+
+                    }
                     break;
-                
+
+                case '/admindashboard':
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/mainpage.php");
+                    include_once("Views/Admin/footer.php");
+                    break;
+                case '/allusers':
+                    $allusers = $this->select('users');
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/allusers.php");
+                    include_once("Views/Admin/footer.php");
+                    break;
+                case '/edituser':
+                    // $allusers = $this->selectwhere('users',array("id"=>$_REQUEST['userid']));
+                    $allusers = $this->select('users',array("id"=>$_REQUEST['userid']));
+                    echo "<pre>";
+                    print_r($allusers);
+                    echo "</pre>";
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/edituser.php");
+                    include_once("Views/Admin/footer.php");
+                    break;
                 default:
                     # code...
                     break;
@@ -75,10 +210,7 @@ class Controller extends Model{
             header("location:home");
             // echo "invalid url";
         }
-        
-
+        ob_flush();
     }
 }
 $Controller = new Controller();
-
-?>

@@ -38,6 +38,73 @@ class Model{
         return $ResData;
         // $SQLEx = ""
     }
+    public function login($uname,$password){
+        // $SQL = "SELECT * FROM users WHERE username='test' AND password='test'";
+        $SQL = "SELECT * FROM users WHERE password='$password' AND (username='$uname' OR email='$uname' OR mobile='$uname')";
+        $SQLEx = $this->connection->query($SQL);
+        // echo "<pre>";
+        // print_r($SQLEx);
+        // echo "</pre>";
+        if ($SQLEx->num_rows > 0) {
+            $FetchData = $SQLEx->fetch_object();
+            $ResData['Data']=$FetchData;
+            $ResData['Msg']="Success";
+            $ResData['Code']="1";
+        } else {
+            $ResData['Data']=0;
+            $ResData['Msg']="Try again";
+            $ResData['Code']="0";
+        }
+        return $ResData;
+        // $SQLEx = ""
+    }
+    public function select($tbl){
+        $SQL = "SELECT * FROM $tbl";
+        $SQLEx = $this->connection->query($SQL);
+        // echo "<pre>";
+        // print_r($SQLEx);
+        // echo "</pre>";
+        if ($SQLEx->num_rows > 0) {
+            while ($Data = $SQLEx->fetch_object()) {
+                $FetchData[] =$Data;
+            }
+            $ResData['Data']=$FetchData;
+            $ResData['Msg']="Success";
+            $ResData['Code']="1";
+        } else {
+            $ResData['Data']=0;
+            $ResData['Msg']="Try again";
+            $ResData['Code']="0";
+        }
+        return $ResData;
+        // $SQLEx = ""
+    }
+    public function selectwhere($tbl,$where){
+        $SQL = "SELECT * FROM $tbl WHERE";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = $value";
+        }
+        echo $SQL;
+        
+        $SQLEx = $this->connection->query($SQL);
+        // echo "<pre>";
+        // print_r($SQLEx);
+        // echo "</pre>";
+        if ($SQLEx->num_rows > 0) {
+            while ($Data = $SQLEx->fetch_object()) {
+                $FetchData[] =$Data;
+            }
+            $ResData['Data']=$FetchData;
+            $ResData['Msg']="Success";
+            $ResData['Code']="1";
+        } else {
+            $ResData['Data']=0;
+            $ResData['Msg']="Try again";
+            $ResData['Code']="0";
+        }
+        return $ResData;
+        // $SQLEx = ""
+    }
 }
 
 

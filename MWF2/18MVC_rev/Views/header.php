@@ -21,6 +21,10 @@
       function hideURLbar() {
       	window.scrollTo(0, 1);
       }
+      // if ( window.history.replaceState) {
+      //   window.history.replaceState(null,null,window.location.href)
+      // }
+
     </script>
     <!--//meta tags ends here-->
     <!--booststrap-->

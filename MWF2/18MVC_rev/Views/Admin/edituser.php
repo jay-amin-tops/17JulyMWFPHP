@@ -1,7 +1,9 @@
 <div class="row pt-5">
-    <div class="col-lg-4 offset-lg-4 mt-5">
+    <div class="col-lg-9 offset-lg-1">
         <div class="card border-primary mb-3">
-            <div class="card-header text-center">Registration</div>
+            <div class="card-header">
+                <h2>Edit</h2>
+            </div>
             <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
                     <div class="row">
