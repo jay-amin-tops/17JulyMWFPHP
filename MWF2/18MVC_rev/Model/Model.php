@@ -58,8 +58,16 @@ class Model{
         return $ResData;
         // $SQLEx = ""
     }
-    public function select($tbl){
+    public function select($tbl,$where=""){
         $SQL = "SELECT * FROM $tbl";
+        if ($where != "") {
+            $SQL .= " WHERE ";
+            foreach ($where as $key => $value) {
+                $SQL .= " $key = $value";
+            }
+        }
+        // echo $SQL;
+        // exit;
         $SQLEx = $this->connection->query($SQL);
         // echo "<pre>";
         // print_r($SQLEx);

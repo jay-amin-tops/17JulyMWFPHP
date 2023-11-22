@@ -194,10 +194,11 @@ class Controller extends Model
                     break;
                 case '/edituser':
                     // $allusers = $this->selectwhere('users',array("id"=>$_REQUEST['userid']));
-                    $allusers = $this->select('users',array("id"=>$_REQUEST['userid']));
-                    echo "<pre>";
-                    print_r($allusers);
-                    echo "</pre>";
+                    $allCities = $this->select('city');
+                    $usersDataById = $this->select('users',array("id"=>$_REQUEST['userid']));
+                    // echo "<pre>";
+                    // print_r($allusers);
+                    // echo "</pre>";
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/edituser.php");
                     include_once("Views/Admin/footer.php");

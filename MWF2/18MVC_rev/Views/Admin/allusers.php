@@ -13,6 +13,7 @@
                                         <th>User Name</th>
                                         <th>Email</th>
                                         <th>Mobile</th>
+                                        <th>Gender</th>
                                         <th>Profile Picture</th>
                                         <th>Action</th>
                                     </tr>
@@ -29,6 +30,7 @@
                                         <td><?php echo $value->username; ?></td>
                                         <td><?php echo $value->email; ?></td>
                                         <td><?php echo $value->mobile; ?></td>
+                                        <td><?php echo $value->gender; ?></td>
                                         <td> <img src="Assets/uploads/<?php echo $value->profile_pic; ?>" width="100px" alt=""></td>
                                         <td>
                                             
