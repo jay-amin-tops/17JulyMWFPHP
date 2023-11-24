@@ -97,11 +97,13 @@
                         <div class="col">
                             <label for="profile_pic">Profile Pic</label>
                             <input type="file" class="form-control" name="profile_pic" accept="image/*" id="profile_pic">
+                            <input type="text" class="form-control" name="old_profile_pic" value="<?php echo $usersDataById['Data'][0]->profile_pic;?>"  id="old_profile_pic">
+
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col text-center">
-                            <input type="submit" class="btn btn-primary" value="Registration" name="btn-regist" id="">
+                            <input type="submit" class="btn btn-primary" value="Update" name="btn-update" id="">
                             <input type="reset" class="btn btn-danger" name="" id="">
                         </div>
                     </div>

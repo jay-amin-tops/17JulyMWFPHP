@@ -121,7 +121,6 @@ class Controller extends Model
                             //         "message" => "Image dimension should be within 300X200"
                             //     );
                         } else {
-
                             echo "inside else";
                             $target = "Assets/uploads/" . basename($_FILES["profile_pic"]["name"]);
                             if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $target)) {
@@ -192,16 +191,59 @@ class Controller extends Model
                     include_once("Views/Admin/allusers.php");
                     include_once("Views/Admin/footer.php");
                     break;
+                case '/deleteuser':
+                        $DeleteRes = $this->delete('users', array("id" => $_REQUEST['userid']));
+                        if ($DeleteRes['Code']==1) {
+                            header("location:allusers");
+                        }else{
+                            echo "<script> alert('Error while updating') </script>";
+                        }
+                    break;
                 case '/edituser':
                     // $allusers = $this->selectwhere('users',array("id"=>$_REQUEST['userid']));
                     $allCities = $this->select('city');
-                    $usersDataById = $this->select('users',array("id"=>$_REQUEST['userid']));
+                    $usersDataById = $this->select('users', array("id" => $_REQUEST['userid']));
                     // echo "<pre>";
                     // print_r($allusers);
                     // echo "</pre>";
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/edituser.php");
                     include_once("Views/Admin/footer.php");
+
+                    if (isset($_REQUEST['btn-update'])) {
+                        $Hoobies = implode(",", $_POST['chk']);
+                        // echo "<pre>";
+                        // print_r($_FILES);
+                        if ($_FILES["profile_pic"]['error'] == 0) {
+                            $target = "Assets/uploads/" . basename($_FILES["profile_pic"]["name"]);
+                            if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $target)) {
+                                $ImageName = $_FILES["profile_pic"]["name"];
+                            } else {
+                                $ImageName = "default.jpg";
+                            }
+                        }else{
+                            $ImageName = $_POST['old_profile_pic'];
+                        }
+                        $Data = array(
+                            "username" => $_POST['username'],
+                            "password" => $_POST['password'],
+                            "fullname" => $_POST['fname'] . " " . $_POST['lname'],
+                            "dateofbirth" => $_POST['dob'],
+                            "mobile" => $_POST['mobile'],
+                            "email" => $_POST['email'],
+                            "gender" => $_POST['gender'],
+                            "hobbies" => $Hoobies,
+                            "address" => $_POST['address'],
+                            "profile_pic" => $ImageName
+                        );
+                        // echo $response['message'];
+                        $UpdateRes = $this->update("users", $Data, array("id" => $_REQUEST['userid'], "user_role" => 2));
+                        if ($UpdateRes['Code']==1) {
+                            header("location:allusers");
+                        }else{
+                            echo "<script> alert('Error while updating') </script>";
+                        }
+                    }
                     break;
                 default:
                     # code...

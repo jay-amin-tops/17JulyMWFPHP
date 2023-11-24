@@ -35,6 +35,7 @@
                                         <td>
                                             
                                             <a href="edituser?userid=<?php echo $value->id; ?>">Edit</a>
+                                            <a href="deleteuser?userid=<?php echo $value->id; ?>">Delete</a>
                                         </td>
                                     </tr>
                                     <?php } ?>
