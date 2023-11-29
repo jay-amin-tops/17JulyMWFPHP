@@ -6,6 +6,7 @@
                     <div class="col-sm-7">
                         <div class="card-body">
                             <h5 class="card-title text-primary">All Users</h5>
+                            <a href="addnewuser">Add New</a>
                             <table class="table table-bordered table-striped">
                                 <thead class="table-dark">
                                     <tr>

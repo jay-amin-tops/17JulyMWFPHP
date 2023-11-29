@@ -167,16 +167,6 @@ class Controller extends Model
                             alert("' . $response['message'] . '")
                         </script>';
 
-                        // if ($_FILES["profile_pic"]["error"] == 0) {
-                        //     $file_extension = pathinfo($_FILES["profile_pic"]["name"], PATHINFO_EXTENSION);
-
-                        //     if ($_FILES["profile_pic"]["size"] > 400000) {
-                        //         move_uploaded_file($_FILES["profile_pic"]["tmp_name"],"uploads/");
-                        //     }else{
-                        //         echo "image size larger than 4MB";
-                        //     }
-                        // }
-
                     }
                     break;
 
@@ -189,6 +179,14 @@ class Controller extends Model
                     $allusers = $this->select('users');
                     include_once("Views/Admin/header.php");
                     include_once("Views/Admin/allusers.php");
+                    include_once("Views/Admin/footer.php");
+                    break;
+                case '/addnewuser':
+                    $allCountries = $this->select('country');
+                    $allStates = $this->select('state');
+                    $allCities = $this->select('city');
+                    include_once("Views/Admin/header.php");
+                    include_once("Views/Admin/addnewuser.php");
                     include_once("Views/Admin/footer.php");
                     break;
                 case '/deleteuser':
@@ -245,7 +243,16 @@ class Controller extends Model
                         }
                     }
                     break;
-                default:
+                    case '/getstatebycountryid':
+                        $allStatesByCountry = $this->select('state',array("country_id"=>$_REQUEST['countryid']));
+                        // echo $allStatesByCountry;
+                        echo json_encode($allStatesByCountry);
+                        break;
+                    case '/getcitybystateid':
+                        $allCitiesByStateId = $this->select('city',array("state_id"=>$_REQUEST['stateid']));
+                        echo json_encode($allCitiesByStateId);
+                        break;
+                    default:
                     # code...
                     break;
             }
