@@ -49,7 +49,9 @@ class Controller extends Model
                     // print_r($data->username);
                     if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         $reqData = json_decode(file_get_contents('php://input'));
-                        $Hoobies = implode(",", $reqData->chk);
+                        // print_r($reqData);
+                        // exit;
+                        // $Hoobies = implode(",", $reqData->chk);
                         $Data = array(
                             "username" => $reqData->username,
                             "password" => $reqData->password,
@@ -58,7 +60,7 @@ class Controller extends Model
                             "mobile" => $reqData->mobile,
                             "email" => $reqData->email,
                             "gender" => $reqData->gender,
-                            "hobbies" => $Hoobies,
+                            "hobbies" => $reqData->chk,
                             "address" => $reqData->address,
                         );
                         // echo $response['message'];
