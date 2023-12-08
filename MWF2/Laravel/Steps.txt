@@ -1,0 +1,17 @@
+composer create-project laravel/laravel example-app
+
+composer require laravel/ui
+
+php artisan ui bootstrap --auth
+
+npm install && npm run dev
+
+php artisan make:controller CustomController
+
+php artisan make:controller CustomControllerWithResource -r
+
+php artisan make:model CustomModel
+
+
+
+php artisan make:model Product -mcr

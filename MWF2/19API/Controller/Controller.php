@@ -44,6 +44,24 @@ class Controller extends Model
                         echo "Invalid Request";
                     }
                     break;
+                case '/addtodo':
+                    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                        $data = json_decode(file_get_contents('php://input'));
+                        // print_r($data);
+                        $InsertRes = $this->insert("todo",array("title"=>$data->title,"status"=>"pending"));
+                        echo json_encode($InsertRes);
+                    } else {
+                        echo "Invalid Request";
+                    }
+                    break;
+                case '/getalltodo':
+                    $InsertRes = $this->select("todo");
+                    echo json_encode($InsertRes);
+                    break;
+                case '/gettodobyid':
+                    $SelectRes = $this->select("todo",array("id"=>$_REQUEST['id']));
+                    echo json_encode($SelectRes);
+                    break;
 
                 case '/registration':
                     // print_r($data->username);
