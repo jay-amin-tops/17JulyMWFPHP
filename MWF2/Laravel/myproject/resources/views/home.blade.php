@@ -17,6 +17,7 @@
 
                     <ol>
                         <li><a href="otherpage">redirect to other page</a></li>
+                        <li><a href="allproducts">Products</a></li>
                     </ol>
 
                     

@@ -4,15 +4,32 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use DB;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Product $product)
     {
-        //
+        // dd("inside controller");
+        // dd($product);
+        $allProducts = $product::get();
+        // $allProducts = DB::table('products')->get();
+
+        // DB::connection()->enableQueryLog();
+
+        // $allProducts = DB::table('products')
+        //     ->select('*')
+        //     ->where('quantity', '>', 1)
+        //     ->get();
+
+
+        // $queries = DB::getQueryLog();
+        // dd($queries);
+        // ->groupBy('quantity')
+        // dd($allProducts);
+        // $data=array('students'=>["name"=>"test"]);
+        return view("allprod", compact('allProducts'));
+        // return view("allprod")->with($data);
     }
 
     /**

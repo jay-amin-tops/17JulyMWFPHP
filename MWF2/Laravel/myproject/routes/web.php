@@ -8,6 +8,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/otherpage', "01route");
+// Route::get('/allproducts', function () { dd("route working"); });
+Route::get('/allproducts', [App\Http\Controllers\ProductController::class, 'index']);
 
 // Route::view('/', 'viewname');
 // Route::get('/', function () { return view('welcome'); });
