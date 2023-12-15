@@ -10,6 +10,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::view('/otherpage', "01route");
 // Route::get('/allproducts', function () { dd("route working"); });
 Route::get('/allproducts', [App\Http\Controllers\ProductController::class, 'index']);
+// Route::any('/addnewprod', [App\Http\Controllers\ProductController::class, 'index']);
+Route::view('/addnewprod', 'addnewproduct');
+Route::post('/saveproduct', [App\Http\Controllers\ProductController::class, 'store']);
+// Route::delete('/deleteproduct/{id}', [App\Http\Controllers\ProductController::class, 'store']);
+Route::any('/deleteproduct/{id}', [App\Http\Controllers\ProductController::class, 'destroy']);
 
 // Route::view('/', 'viewname');
 // Route::get('/', function () { return view('welcome'); });

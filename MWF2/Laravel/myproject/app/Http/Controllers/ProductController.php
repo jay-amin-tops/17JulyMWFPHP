@@ -43,9 +43,32 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,Product $product)
     {
-        //
+        // dd($request->all());
+        $file = $request->file('image');
+        // dd($file);
+        if ($file) {
+            $fileNameEx = $file->getClientOriginalExtension();
+            $fileName = "project".date("dmyhis").".".$fileNameEx;
+            // dd($fileNameEx);
+            $file->move(public_path('uploads'), $fileName);
+            # code...
+        }else{
+            // dd("inside else");
+            $fileName = "default.png";
+        }
+
+        $product->title = $request->title;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->image = $fileName;
+        $product->save();
+        return redirect("allproducts"); 
+        // $fileName = $file->getClientOriginalName();
+
+        // dd($file);
+
     }
 
     /**
@@ -75,8 +98,11 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy($id,Product $product)
     {
-        //
+        $FindById = $product::find($id);
+        // dd($FindById);
+        $FindById->delete();
+        return redirect("allproducts"); 
     }
 }

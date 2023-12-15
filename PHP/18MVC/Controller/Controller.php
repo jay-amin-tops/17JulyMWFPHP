@@ -26,9 +26,10 @@ class Controller extends Model{
                     include_once("Views/login.php");
                     // echo "<h2>Login page data</h2>";
                     include_once("Views/footer.php");
-                    echo "<pre>";
-                    print_r($_REQUEST);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // print_r($_REQUEST);
+                    $LoginRes = $this->login("admin","123");
+                    // echo "</pre>";
                     break;
                 case '/signup':
                     include_once("Views/header.php");
@@ -50,7 +51,10 @@ class Controller extends Model{
                         "address"=>$_REQUEST['address'],
                         "status"=>0,
                     );
-                        $this->insert("users",$data);
+                        $response = $this->insert("users",$data);
+                        echo "<pre>";
+                        print_r($response);
+                        echo "</pre>";
                     }
                     break;
 
