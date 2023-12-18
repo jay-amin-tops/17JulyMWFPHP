@@ -27,9 +27,49 @@ class Model
             // echo "</pre>";
         }
     }
-    function select()
-    {
-        $SQL = "Queries";
+    function select($tbl){
+        $SQL = "SELECT * FROM $tbl";
+        $SQLEx = $this->db->query($SQL);
+        if ($SQLEx->num_rows > 0) {
+            while ($Data = $SQLEx->fetch_object()) {
+                $fetchData[] = $Data;
+            }
+            $Res["Code"] = 1;
+            $Res["Msg"] = "Success";
+            $Res["Data"] = $fetchData;
+        } else {
+            // echo "data na mlya";
+            $Res["Code"] = 0;
+            $Res["Msg"] = "try again";
+            $Res["Data"] = 0;
+            # code...
+        }
+        return $Res;
+    }
+    function selectwhere($tbl,$where){
+        $SQL = "SELECT * FROM $tbl WHERE";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = $value AND";
+        }
+        $SQL = rtrim($SQL,"AND");
+        // echo $SQL;
+        // exit;
+        $SQLEx = $this->db->query($SQL);
+        if ($SQLEx->num_rows > 0) {
+            while ($Data = $SQLEx->fetch_object()) {
+                $fetchData[] = $Data;
+            }
+            $Res["Code"] = 1;
+            $Res["Msg"] = "Success";
+            $Res["Data"] = $fetchData;
+        } else {
+            // echo "data na mlya";
+            $Res["Code"] = 0;
+            $Res["Msg"] = "try again";
+            $Res["Data"] = 0;
+            # code...
+        }
+        return $Res;
     }
     function login($uname, $pass)
     {
@@ -60,6 +100,7 @@ class Model
             $Res["Data"] = 0;
             # code...
         }
+        return $Res;
     }
     function insert($table, $dt)
     {
