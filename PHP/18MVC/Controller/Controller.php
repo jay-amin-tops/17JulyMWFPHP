@@ -25,12 +25,51 @@ class Controller extends Model{
                     include_once("Views/admin/footer.php");
                     break;
                 case '/allusers':
-                    $allUsers = $this->selectwhere("users",array("status"=>1,"role_id"=>2));
+                    $allUsers = $this->select("users",array("status"=>1,"role_id"=>2));
+                    // echo "<pre>";
+                    // print_r($allUsers);
+                    // echo "</pre>";
+                    // $allUsers = $this->select("users");
                     // echo "<pre>";
                     // print_r($allUsers);
                     // echo "</pre>";
                     include_once("Views/admin/header.php");
                     include_once("Views/admin/allusers.php");
+                    include_once("Views/admin/footer.php");
+                    break;
+                case '/deleteuser':
+                    // echo "<pre>";
+                    // print_r($_REQUEST);
+                    // echo "</pre>";
+                    // exit;
+                    $deleteUsersRes = $this->delete("users",array("id"=>$_REQUEST['userid']));
+                    // $allUsers = $this->select("users");
+                    // echo "<pre>";
+                    // print_r($deleteUsersRes);
+                    // echo "</pre>";
+                    // include_once("Views/admin/header.php");
+                    // include_once("Views/admin/allusers.php");
+                    // include_once("Views/admin/footer.php");
+                    if ($deleteUsersRes['Code'] == 1) {
+                        header("location:allusers");
+                    } else {
+                        echo '<script>alert("Error while deleting data try after some time")</script>';
+                        # code...
+                    }
+                    
+                    break;
+                case '/edituser':
+                    // echo "<pre>";
+                    // print_r($_REQUEST);
+                    // echo "</pre>";
+                    // exit;
+                    $Response = $this->select("users",array("id"=>$_REQUEST['userid']));
+                    // $allUsers = $this->select("users");
+                    echo "<pre>";
+                    print_r($Response);
+                    echo "</pre>";
+                    include_once("Views/admin/header.php");
+                    include_once("Views/admin/updateusers.php");
                     include_once("Views/admin/footer.php");
                     break;
                 case '/signin':

@@ -15,6 +15,8 @@ Route::view('/addnewprod', 'addnewproduct');
 Route::post('/saveproduct', [App\Http\Controllers\ProductController::class, 'store']);
 // Route::delete('/deleteproduct/{id}', [App\Http\Controllers\ProductController::class, 'store']);
 Route::any('/deleteproduct/{id}', [App\Http\Controllers\ProductController::class, 'destroy']);
+Route::view('/admindashboard', "admin.maindashboard");
+Route::view('/allusers', "admin.allusers");
 
 // Route::view('/', 'viewname');
 // Route::get('/', function () { return view('welcome'); });

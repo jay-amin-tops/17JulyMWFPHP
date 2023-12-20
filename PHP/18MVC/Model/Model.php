@@ -27,8 +27,18 @@ class Model
             // echo "</pre>";
         }
     }
-    function select($tbl){
+    // function select($tbl,array $where=[]){
+    function select($tbl,$where=""){
+        // $SQL = "SELECT * FROM $tbl";
         $SQL = "SELECT * FROM $tbl";
+        if ($where != "") {
+            $SQL .= " WHERE ";
+            foreach ($where as $key => $value) {
+                $SQL .= " $key = $value AND";
+            }
+            $SQL = rtrim($SQL,"AND");
+        }
+        // echo $SQL;
         $SQLEx = $this->db->query($SQL);
         if ($SQLEx->num_rows > 0) {
             while ($Data = $SQLEx->fetch_object()) {
@@ -132,9 +142,28 @@ class Model
     {
         $SQL = "Queries";
     }
-    function delete()
+    function delete($tbl,$where)
     {
-        $SQL = "Queries";
+        $SQL = "DELETE FROM $tbl WHERE";
+        foreach ($where as $key => $value) {
+            $SQL .= " $key = $value AND";
+        }
+        $SQL = rtrim($SQL,"AND");
+        // echo $SQL;
+        // exit;
+        $SQLEx = $this->db->query($SQL);
+        if ($SQLEx > 0) {
+            $Res["Code"] = 1;
+            $Res["Msg"] = "Success";
+            $Res["Data"] = 1;
+        } else {
+            // echo "data na mlya";
+            $Res["Code"] = 0;
+            $Res["Msg"] = "try again";
+            $Res["Data"] = 0;
+            # code...
+        }
+        return $Res;
     }
 }
 
