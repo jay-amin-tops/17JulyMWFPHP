@@ -30,6 +30,7 @@
                                     <td>User Name</td>
                                     <td>Email</td>
                                     <td>Mobile</td>
+                                    <td>Gender</td>
                                     <td>Image</td>
                                     <td>Action</td>
                                 </tr>
@@ -39,7 +40,8 @@
                                     <td><?php echo $value->username; ?></td>
                                     <td><?php echo $value->email; ?></td>
                                     <td><?php echo $value->mobile; ?></td>
-                                    <td><?php echo $value->mobile; ?></td>
+                                    <td><?php echo $value->gender; ?></td>
+                                    <td><?php echo $value->prof_pic; ?></td>
                                     <td> 
                                         <!-- <i class="fa fa-pencil"></i>  -->
                                         <a href="edituser?userid=<?php echo $value->id; ?>"><i class="fa fa-edit"></i></a>  

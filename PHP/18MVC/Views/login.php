@@ -21,7 +21,7 @@
 						</div>
 						<div class="row">
 							<div class="col">
-								<input type="submit" name="btn" id="">
+								<input type="submit" name="btn-login" id="">
 							</div>
 						</div>
 						<div class="row">

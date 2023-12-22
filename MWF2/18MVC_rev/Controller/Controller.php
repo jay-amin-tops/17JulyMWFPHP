@@ -94,7 +94,7 @@ class Controller extends Model
                         );
                         $file_extension = pathinfo($_FILES["profile_pic"]["name"], PATHINFO_EXTENSION);
                         $fileinfo = @getimagesize($_FILES["profile_pic"]["tmp_name"]);
-
+                        // move_uploaded_file($_FILES["profile_pic"]["tmp_name"],"Assets/uploads/" . basename($_FILES["profile_pic"]["name"]))
                         $width = $fileinfo[0];
                         $height = $fileinfo[1];
                         if (!file_exists($_FILES["profile_pic"]["tmp_name"])) {
