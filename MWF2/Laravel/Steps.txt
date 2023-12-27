@@ -12,6 +12,4 @@ php artisan make:controller CustomControllerWithResource -r
 
 php artisan make:model CustomModel
 
-
-
 php artisan make:model Product -mcr

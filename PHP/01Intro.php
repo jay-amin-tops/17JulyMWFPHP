@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <?php
+    echo "<br>" . $a = '1';
+    echo "<br>" . $b = &$a;
+    //   $a = "45"; 
+    echo "<br>" . $b = "2$b";
+    // echo "<br>" . "2$a";
+
+    ?>
     <h2>PHP</h2>
     <p>PHP stands for HyperText Preprocesor</p>
     <p>Earlier its called Personal Home Page</p>
@@ -21,5 +31,7 @@
     <p>server side fast response</p>
     <p>server side scripting lang for make it executable we needs to run it from the server like for local machine we hve XAMPP</p>
     <p>loosly type lang means variable doesnt to be declared before its used</p>
+
 </body>
+
 </html>

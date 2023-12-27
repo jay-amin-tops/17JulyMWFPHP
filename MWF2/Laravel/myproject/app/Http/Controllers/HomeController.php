@@ -13,12 +13,11 @@ class HomeController extends Controller
     public function index()
     {
         $userData =  \Auth::user();
-        // dd($userData['role_id']);
+        // dd($userData);
         if ($userData['role_id'] == 1) {
             return redirect('admindashboard');
         } else {
             return view('home');
         }
-        
     }
 }

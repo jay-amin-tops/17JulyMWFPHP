@@ -16,7 +16,12 @@ Route::post('/saveproduct', [App\Http\Controllers\ProductController::class, 'sto
 // Route::delete('/deleteproduct/{id}', [App\Http\Controllers\ProductController::class, 'store']);
 Route::any('/deleteproduct/{id}', [App\Http\Controllers\ProductController::class, 'destroy']);
 Route::view('/admindashboard', "admin.maindashboard");
-Route::view('/allusers', "admin.allusers");
+// Route::view('/allusers', "admin.allusers");
+Route::get('/allusers',  [App\Http\Controllers\CustomControllerWithResource::class, 'index']);
+Route::get('/edituser/{id}',  [App\Http\Controllers\CustomControllerWithResource::class, 'edit']);
+Route::post('/updateuser/{id}',  [App\Http\Controllers\CustomControllerWithResource::class, 'update']);
+// Route::delete('/deleteuser/{id}',  [App\Http\Controllers\CustomControllerWithResource::class, 'destroy']);
+Route::any('/deleteuser/{id}',  [App\Http\Controllers\CustomControllerWithResource::class, 'destroy']);
 
 // Route::view('/', 'viewname');
 // Route::get('/', function () { return view('welcome'); });
