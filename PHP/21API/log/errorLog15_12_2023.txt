@@ -1,0 +1,21 @@
+
+Error Time >>> 15-12-2023 09:56:03 AM
+Error Msg  >>> Unknown database 'masterdatabas'
+
+Error Time >>> 15-12-2023 09:56:03 AM
+Error Msg  >>> Unknown database 'masterdatabas'
+
+Error Time >>> 15-12-2023 09:56:06 AM
+Error Msg  >>> Unknown database 'masterdatabas'
+
+Error Time >>> 15-12-2023 09:56:08 AM
+Error Msg  >>> Unknown database 'masterdatabas'
+
+Error Time >>> 15-12-2023 09:59:32 AM
+Error Msg  >>> Unknown database 'masterdatabas'
+
+Error Time >>> 15-12-2023 09:59:35 AM
+Error Msg  >>> Unknown database 'masterdatabas'
+
+Error Time >>> 15-12-2023 10:00:07 AM
+Error Msg  >>> Unknown database 'masterdatabas'

@@ -7,10 +7,10 @@
 			<div class="card">
 				<div class="card-header text-center"> Login </div>
 				<div class="card-body">
-					<form method="post" enctype="multipart/form-data">
+					<form method="post" id="registrationform" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col">
-								<input type="text" placeholder="Enter User Name" class="form-control" name="username" id="">
+								<input type="text" placeholder="Enter User Name" class="form-control" name="username" id="" required>
 							</div>
 						</div>
 						<div class="row mt-3">
@@ -49,13 +49,30 @@
 								<input type="radio" value="Female" name="gender" id="Female"> <label for="Female">Female</label>
 							</div>
 						</div>
-						<div class="row mt-3">
+			<br>
+						<div class="row ">
 							<div class="col">
 								<input type="checkbox" name="chk[]" id="Cricekt" value="Cricekt"> <label for="Cricekt">Cricekt</label>
 								<input type="checkbox" name="chk[]" id="Music" value="Music"> <label for="Music">Music</label>
 								<input type="checkbox" name="chk[]" id="Reading" value="Reading"> <label for="Reading">Reading</label>
 								<input type="checkbox" name="chk[]" id="Travelling" value="Travelling"> <label for="Travelling">Travelling</label>
 
+							</div>
+						</div>
+						<br>
+						<div class="row mt-3">
+							<div class="col text-center">
+								<select name="country" class="form-control" onchange="getStatesByCountry(this.value)" id="country">
+									<option value="">--Select Country--</option>
+								</select>
+							</div>
+						</div>
+						<br>
+						<div class="row mt-3">
+							<div class="col text-center">
+								<select name="state" class="form-control" id="state">
+									<option value="">--Select State--</option>
+								</select>
 							</div>
 						</div>
 						<br>
@@ -90,7 +107,46 @@
 					</form>
 				</div>
 			</div>
+			<script>
+				$().ready(function() {
+					// validate the comment form when it is submitted
+					$("#registrationform").validate();
 
+					fetchCountries()
+				})
+				$.validator.setDefaults({
+					submitHandler: function() {
+						// alert("submitted!");
+						
+					}
+				});
+
+				function fetchCountries() {
+					fetch("http://localhost/laravel/17JulyPHPMWF9/PHP/21API/getallcountries").then((res)=>res.json()).then((result)=>{
+						console.log(result);
+						let CountryOption = '<option value="">--Select Country--</option>'
+						result.forEach(element => {
+							console.log(element.country_name);
+							// CountryOption +='<option value="">--Select Country--</option>'
+							CountryOption +=`<option value="${element.country_id}">${element.country_name}</option>`
+						});
+						console.log(CountryOption);
+						$("#country").html(CountryOption);
+					})
+				}
+				function getStatesByCountry(id) {
+					fetch(`http://localhost/laravel/17JulyPHPMWF9/PHP/21API/getstatesbycountryid?countryid=${id}`).then((res)=>res.json()).then((result)=>{
+						console.log(result);
+						let StateOption = '<option value="">--Select Country--</option>'
+						result.forEach(element => {
+							StateOption +=`<option value="${element.id}">${element.state_title}</option>`
+						});
+						$("#state").html(StateOption);
+					})
+				}
+
+
+			</script>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,9 @@
+Creating a custom Model-View-Controller (MVC) framework in PHP can be a challenging but rewarding task. 
+
+MVC is a design pattern that separates an application into three main components: the model, the view, and the controller. 
+
+This separation allows for better code organization and the ability to make changes to the application without 
+affecting other parts of the code. 
+
+In this post, we’ll walk through the steps of building a simple MVC framework in PHP that 
+will help you understand the basics of MVC and how to build your own.

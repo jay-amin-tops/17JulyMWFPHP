@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="username">UserName</label>
+    <input type="text" onblur="checkreq(this)" name="" id="username">
+    <span id="userNameError"></span>
+    <script>
+        // console.log("called",54+545);
+        // test = 5454
+        // console.log(test);
+        // let variable_let = 45
+        // console.log(variable_let);
+        // var variable_var = 879
+        // console.log(variable_var);
+        // const variable_const = 456
+        // console.log(variable_const);
+
+        // $marks = 54
+        // console.log($marks);
+        // if ($marks > 50) {
+        //     console.log("pass");
+        // } else {
+        //     console.log("try again");
+            
+        // }
+
+        function checkreq(e) {
+            // console.log(e);
+            // console.log(e.value);
+            if (e.value == "") {
+                // console.log("called inside if this field is required");
+                // document.getElementById("userNameError").innerText ="<b>This field is required</b>"
+                document.getElementById("userNameError").innerHTML ="<b>This field is required</b>"
+            } else {
+                console.log("called inside else");
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

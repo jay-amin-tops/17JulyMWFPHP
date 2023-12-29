@@ -22,7 +22,11 @@ Route::get('/edituser/{id}',  [App\Http\Controllers\CustomControllerWithResource
 Route::post('/updateuser/{id}',  [App\Http\Controllers\CustomControllerWithResource::class, 'update']);
 // Route::delete('/deleteuser/{id}',  [App\Http\Controllers\CustomControllerWithResource::class, 'destroy']);
 Route::any('/deleteuser/{id}',  [App\Http\Controllers\CustomControllerWithResource::class, 'destroy']);
+Route::view('/middlewareexample','admin.checkprodquantity');
+Route::any('/saveprodformiddle',[App\Http\Controllers\CustomControllerWithResource::class, 'middlwsuccess'])->middleware('checkquantity');
 
+Route::view('/validate','admin.validateform');
+Route::any('/checkvalidation',[App\Http\Controllers\CustomControllerWithResource::class, 'checkvalidation']);
 // Route::view('/', 'viewname');
 // Route::get('/', function () { return view('welcome'); });
 // Route::post('/', [App\Http\Controllers\Controller::class, 'method']);

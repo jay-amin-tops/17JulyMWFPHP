@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Product;
 use DB;
 
 class CustomControllerWithResource extends Controller
@@ -51,7 +52,7 @@ class CustomControllerWithResource extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user,string $id)
+    public function edit(User $user, string $id)
     {
         // dd($id);
         // DB::connection()->enableQueryLog();
@@ -65,7 +66,7 @@ class CustomControllerWithResource extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,User $user, string $id)
+    public function update(Request $request, User $user, string $id)
     {
         // dd($id);
         $data = $user::find($id);
@@ -73,13 +74,7 @@ class CustomControllerWithResource extends Controller
         $data->email = $request->email;
         $data->save();
         return redirect("allusers");
-
-
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $data = User::find($id);
@@ -87,5 +82,23 @@ class CustomControllerWithResource extends Controller
         return redirect("allusers");
         // dd($id);
         //
+    }
+    public function middlwsuccess(Request $request)
+    {
+        dd($request->all());
+    }
+    public function checkvalidation(Request $request,Product $product)
+    {
+        // dd($request->all());
+        $validated = $request->validate([
+            'title' => 'required|unique:products|max:255',
+            'quantity' => 'required',
+            'price' => 'required',
+        ]);
+        $product->title = $request->title;
+        $product->quantity = $request->quantity;
+        $product->price = $request->price;
+        $product->save();
+        return redirect("allusers");
     }
 }

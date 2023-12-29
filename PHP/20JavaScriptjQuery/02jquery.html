@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="username">UserName</label>
+    <input type="text" onblur="checkreq(this)" name="" id="username">
+    <span id="userNameError"></span>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <script>
+        function checkreq(e) {
+            // console.log(e);
+            // console.log(e.value);
+            if (e.value == "") {
+                // console.log("called inside if this field is required");
+                // document.getElementById("userNameError").innerText ="<b>This field is required</b>"
+                $("#userNameError").html("<b>This field is required</b>")
+            } else {
+                $("#userNameError").html("")
+            }
+        }
+    </script>
+</body>
+</html>
