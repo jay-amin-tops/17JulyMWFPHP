@@ -280,6 +280,12 @@
                 <p> Validation </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="custommacro" class="nav-link">
+                <i class="fas fa-cog"></i>
+                <p> Macro </p>
+              </a>
+            </li>
 
 
           </ul>

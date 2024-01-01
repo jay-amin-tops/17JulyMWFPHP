@@ -9,12 +9,13 @@
         <div class="row">
             <div class="col-lg-12 connectedSortable ui-sortable">
                 <div class="card p-3">
-                    <form action="checkvalidation" method="post">
+                    <form action="checkvalidation" enctype="multipart/form-data" method="post">
                         @csrf
                         <!-- <input type="text" name="_tkn" value="123" id="_tkn"> -->
                         <input type="text" name="title" id="title"> <br>
                         <input type="number" name="quantity" id="quantity"> <br>
                         <input type="number" name="price" id="price"> <br>
+                        <input type="file" name="image" id="image"> <br>
                         <input type="submit" name="save" id="save">
                         <br>
                         <br>

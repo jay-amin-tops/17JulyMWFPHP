@@ -49,8 +49,12 @@ class Controller extends Model
                     $msg = "your Password change OTP is :$OTP";
                     $msg .= "Changes Password link :<a href='http://localhost/laravel/17JulyPHPMWF9/PHP/18MVC/forgorpasswprd?mail='$mailTo>Click here</a>";
                     $mailTo = "jay.amin.tops@gmail.com";
-
                     $this->sendmail($msg, $mailTo);
+                    break;
+                case '/registration':
+                    $data = file_get_contents('php://input');
+
+                    
                     break;
                 default:
                     # code...

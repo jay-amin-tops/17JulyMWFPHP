@@ -1,0 +1,15 @@
+
+https://fakestoreapi.com/products
+
+
+https://github.com/ornicar/php-github-api
+
+
+https://github.com/noweh/twitter-api-v2-php
+
+
+https://www.twilio.com/
+
+
+https://api.opencagedata.com/geocode/v1/json?q=Ahmedabad&key=faed4d9eb29d483a866000c901ccb680
+

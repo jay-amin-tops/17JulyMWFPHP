@@ -27,6 +27,7 @@ Route::any('/saveprodformiddle',[App\Http\Controllers\CustomControllerWithResour
 
 Route::view('/validate','admin.validateform');
 Route::any('/checkvalidation',[App\Http\Controllers\CustomControllerWithResource::class, 'checkvalidation']);
+Route::view('/custommacro','admin.custom_macro');
 // Route::view('/', 'viewname');
 // Route::get('/', function () { return view('welcome'); });
 // Route::post('/', [App\Http\Controllers\Controller::class, 'method']);
