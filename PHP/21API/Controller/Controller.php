@@ -33,7 +33,7 @@ class Controller extends Model
                     echo json_encode($Data['Data']);
                     break;
                 case '/getstatesbycountryid':
-                    $Data = $this->select("state",array("countryid"=>$_REQUEST['countryid']));
+                    $Data = $this->select("state", array("countryid" => $_REQUEST['countryid']));
                     echo json_encode($Data['Data']);
                     break;
                 case '/getallstates':
@@ -42,6 +42,10 @@ class Controller extends Model
                     break;
                 case '/getallcities':
                     $Data = $this->select("cities_data");
+                    echo json_encode($Data['Data']);
+                    break;
+                case '/getproducts':
+                    $Data = $this->select("product");
                     echo json_encode($Data['Data']);
                     break;
                 case '/testmail':
@@ -53,8 +57,8 @@ class Controller extends Model
                     break;
                 case '/registration':
                     $data = file_get_contents('php://input');
-
-                    
+                    $result = $this->insert("user",$data);
+                    echo json_encode($result);
                     break;
                 default:
                     # code...

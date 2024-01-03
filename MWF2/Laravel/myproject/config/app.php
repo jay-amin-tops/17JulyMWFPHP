@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
+use Intervention\Image\Facades\Image as Image;
 
 return [
 
@@ -169,8 +170,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        // Intervention\Image\ImageServiceProvider::class
         // 'Intervention\Image\ImageServiceProvider'
+        // Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class
+
     ])->toArray(),
 
     /*
@@ -186,8 +190,10 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        // 'Image' => 'Intervention\Image\Facades\Image',
         // 'Image' => Intervention\Image\Facades\Image::class
-        'Image' => 'Intervention\Image\Facades\Image'
+        'Image' => Intervention\Image\Facades\Image::class
+
     ])->toArray(),
 
 ];
