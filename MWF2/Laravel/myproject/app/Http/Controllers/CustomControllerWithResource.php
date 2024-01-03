@@ -88,6 +88,10 @@ class CustomControllerWithResource extends Controller
     {
         dd($request->all());
     }
+    public function testapi(Request $request)
+    {
+        dd("testing");
+    }
     public function checkvalidation(Request $request, Product $product)
     {
 

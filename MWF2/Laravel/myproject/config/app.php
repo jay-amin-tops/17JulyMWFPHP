@@ -173,7 +173,7 @@ return [
         // Intervention\Image\ImageServiceProvider::class
         // 'Intervention\Image\ImageServiceProvider'
         // Intervention\Image\ImageServiceProvider::class
-        Intervention\Image\ImageServiceProvider::class
+        // Intervention\Image\ImageServiceProvider::class
 
     ])->toArray(),
 
@@ -192,7 +192,7 @@ return [
         // 'Example' => App\Facades\Example::class,
         // 'Image' => 'Intervention\Image\Facades\Image',
         // 'Image' => Intervention\Image\Facades\Image::class
-        'Image' => Intervention\Image\Facades\Image::class
+        // 'Image' => Intervention\Image\Facades\Image::class
 
     ])->toArray(),
 
