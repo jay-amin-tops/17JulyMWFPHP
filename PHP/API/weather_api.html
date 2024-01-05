@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <label for="">City</label>
+    <input type="text" id="city" placeholder="city">
+    <button id="btn">Weather Data</button>
+    <p id="disp"></p><br>
+    <p id="ans"></p>
+    <p id="ans2"></p>
+    <script>
+        let Button = document.getElementById("btn");
+        
+        Button.addEventListener("click", function () {
+            let city = document.getElementById("city");
+            document.getElementById("disp").innerHTML = city.value;
+            // document.write("called")
+            if (city.value == "") {
+                alert("please enter value")
+            } else {
+                fetch(`https://api.opencagedata.com/geocode/v1/json?q=${city.value}&key=faed4d9eb29d483a866000c901ccb680`)
+                    .then((response) => response.json()).
+                    then((result) => {
+                        let data = result["results"][1]["annotations"]["DMS"]
+                        // let data = result["results"][1]["components"]["city"];
+                        // let data = result["results"]["city"];
+                        document.getElementById("ans").innerHTML = JSON.stringify(data);
+
+                        // console.log(result);
+                        // let htmlData = "";
+                        // (Object.entries(result)).forEach(element => {
+                        // (result).forEach(element => {
+
+                        // console.log(element.username);
+                        // htmlData += `<li>${element.username} ${element.email}</li>`;
+                    })
+                fetch("https://api.openweathermap.org/data/2.5/weather?lat=23.0218734&lon=72.5984903&appid=ff431b01e24bf42cc8b9d90009e86b7f")
+                    .then((response2) => response2.json()).
+                    then((result2) => {
+                        // let name = JSON.stringify()
+                        let data2 = result2["weather"];
+                        document.getElementById("ans2").innerHTML = JSON.stringify(data2);
+                    })
+            }
+        })
+
+
+        // document.getElementById("disp").innerHTML = htmlData
+        // })        
+    </script>
+</body>
+
+</html>

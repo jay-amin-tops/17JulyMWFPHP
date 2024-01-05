@@ -145,7 +145,7 @@
                     //     // validate the comment form when it is submitted
                     //     $("#registrationform").validate();
 
-                    
+                    fetchCountries()
                     // })
                     // $.validator.setDefaults({
                     //     submitHandler: function () {
@@ -153,58 +153,40 @@
 
                     //     }
                     // });
-                    // function fetchCountries() {
-                    //     fetch("http://localhost/laravel/17JulyPHPMWF9/PHP/21API/getallcountries").then((res) => res.json()).then((result) => {
-                    //         console.log(result);
-                    //         let CountryOption = '<option value="">--Select Country--</option>'
-                    //         result.forEach(element => {
-                    //             console.log(element.country_name);
-                    //             // CountryOption +='<option value="">--Select Country--</option>'
-                    //             CountryOption += `<option value="${element.country_id}">${element.country_name}</option>`
-                    //         });
-                    //         console.log(CountryOption);
-                    //         $("#country").html(CountryOption);
-                    //     })
-                    // }
-                    // fetchCountries()
-                    // function getStatesByCountry(id) {
-                    //     fetch(`http://localhost/laravel/17JulyPHPMWF9/PHP/21API/getstatesbycountryid?countryid=${id}`).then((res) => res.json()).then((result) => {
-                    //         console.log(result);
-                    //         let StateOption = '<option value="">--Select Country--</option>'
-                    //         result.forEach(element => {
-                    //             StateOption += `<option value="${element.id}">${element.state_title}</option>`
-                    //         });
-                    //         $("#state").html(StateOption);
-                    //     })
-                    // }
+                    function fetchCountries() {
+                        fetch("http://localhost/laravel/17JulyPHPMWF9/PHP/21API/getallcountries").then((res) => res.json()).then((result) => {
+                            console.log(result);
+                            let CountryOption = '<option value="">--Select Country--</option>'
+                            result.forEach(element => {
+                                console.log(element.country_name);
+                                // CountryOption +='<option value="">--Select Country--</option>'
+                                CountryOption += `<option value="${element.country_id}">${element.country_name}</option>`
+                            });
+                            console.log(CountryOption);
+                            $("#country").html(CountryOption);
+                        })
+                    }
+                    function getStatesByCountry(id) {
+                        fetch(`http://localhost/laravel/17JulyPHPMWF9/PHP/21API/getstatesbycountryid?countryid=${id}`).then((res) => res.json()).then((result) => {
+                            console.log(result);
+                            let StateOption = '<option value="">--Select Country--</option>'
+                            result.forEach(element => {
+                                StateOption += `<option value="${element.id}">${element.state_title}</option>`
+                            });
+                            $("#state").html(StateOption);
+                        })
+                    }
 
                     function savedata() {
                         event.preventDefault()
-                        // console.log($('form').serializeArray());
+                        console.log($('form').serializeArray());
                         var result = {};
                         $.each($('form').serializeArray(), function () {
                             result[this.name] = this.value;
                         });
-
-
-
-                        // console.log($('input[name="locationthemes"]:checked').serialize());
-
-                        //or
-
-
-                        let hobStr = ""
-                        $('input[name="chk[]"]:checked').each(function () {
-                            console.log(this.value);
-                            hobStr+=this.value+","
-                        });
-                        hobStr = hobStr.substring(0, hobStr.length - 1); // Remove the last character
-                        // console.log(hobStr);
-                        delete(result['chk[]'])
-                        result["hobbies"]=hobStr
-
+                        
                         console.log(result);
-                        // // console.log("called");
+                        // console.log("called");
                         fetch(`http://localhost/laravel/17JulyPHPMWF9/PHP/21API/registration`, {
                             headers: {
                                 'Accept': 'application/json',

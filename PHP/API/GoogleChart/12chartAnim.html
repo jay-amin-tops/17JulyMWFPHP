@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.onload = function () {/*from  w ww.  ja va 2 s  .  com*/
+            google.charts.load("current", { packages: ["corechart"] });
+            google.charts.setOnLoadCallback(createPIE);
+            function createPIE() {
+                var options = {
+                    title: 'Fees Allocation',
+                    colors: ['#888', 'orange', 'red'],
+                    is3D: true
+                };
+                var data = google.visualization.arrayToDataTable([
+                    ['status', 'Amount'],
+                    ['Total Amount', 20],
+                    ['Collected', 50],
+                    ['Due', 30]]);
+                var chart = new google.visualization.PieChart(document.getElementById('graph'));
+                chart.draw(data, options);
+                var percent = 0;
+                var handler = setInterval(function () {
+                    // values increment
+                    percent += 1;
+                    // apply new values
+                    data.setValue(0, 1, percent);
+                    data.setValue(1, 1, 110 - percent);
+                    // update the pie
+                    chart.draw(data, options);
+                    // check if we have reached the desired value
+                    if (percent > 74)
+                        // stop the loop
+                        clearInterval(handler);
+                }, 30);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="content">
+        <div id="graph" style="width:300px;height:300px">
+        </div>
+    </div>
+</body>
+
+</html>
